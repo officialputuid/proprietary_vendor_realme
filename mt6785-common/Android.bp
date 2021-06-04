@@ -81,3 +81,10 @@ dex_import {
 	jars: ["proprietary/framework/mediatek-telephony-common.jar"],
 }
 
+dex_import {
+	name: "com.android.hotwordenrollment.common.util",
+	owner: "realme",
+	jars: ["proprietary/system_ext/framework/com.android.hotwordenrollment.common.util.jar"],
+	system_ext_specific: true,
+}
+
