@@ -1,0 +1,7 @@
+libOpenCL.so
+libnir_neon_driver_ndk.mtk.so
+libcmdl_ndk.mtk.so
+libarmnn_ndk.mtk.so
+libmtkisp_metadata.so
+vendor.mediatek.hardware.camera.isphal@1.0.so
+libstdc++.so

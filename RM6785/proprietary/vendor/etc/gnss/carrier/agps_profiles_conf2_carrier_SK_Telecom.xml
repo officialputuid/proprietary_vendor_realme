@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file.
+       cur_supl_profile is supported but other supl_profile are ignored.
+       auto_profile_enable is not supported.
+  -->
+
+  <cur_supl_profile name="SK_Telecom"
+      addr="wpde.nate.com"
+      port="7275"
+      tls="true"
+  />
+
+  <cdma_profile name="CDMA1"
+  />
+
+  <agps_setting
+    ignore_si_for_e911="true"
+  />
+
+  <gnss_setting
+  />
+
+  <cp_setting
+  />
+
+  <up_setting
+    ca_enable="true"
+    supl_version="2"
+    dedicated_apn_enable="true"
+    preferred_2g3g_cell_age="0"
+    supl_ver_minor="0"
+    supl_ver_ser_ind="1"
+    esupl_apn_mode="3"
+    up_lpp_in_2g3g_disable="true"
+    up_rrlp_in_4g_disable="true"
+  />
+
+</mtk_agps_profiles>

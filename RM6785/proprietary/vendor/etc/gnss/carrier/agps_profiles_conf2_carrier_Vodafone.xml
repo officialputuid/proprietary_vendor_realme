@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file.
+       cur_supl_profile is supported but other supl_profile are ignored.
+       auto_profile_enable is not supported.
+  -->
+
+  <cur_supl_profile name="Vodafone"
+      addr="supl.vodafone.com"
+      port="7275"
+      tls="true"
+  />
+
+  <cdma_profile name="CDMA1"
+  />
+
+  <agps_setting
+  />
+
+  <gnss_setting
+  />
+
+  <cp_setting
+  />
+
+  <up_setting
+      ca_enable="true"
+      supl_version="2"
+      tls_version="1"
+      sha_version="0"
+  />
+
+</mtk_agps_profiles>

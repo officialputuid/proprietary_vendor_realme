@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file.
+       cur_supl_profile is supported but other supl_profile are ignored.
+       auto_profile_enable is not supported.
+  -->
+
+  <!-- default H-SLP by IMSI: e.g, h-slp.mnc310.mcc170.pub.3gppnetwork.org -->
+  <cur_supl_profile name="ATnT_US"
+      addr=""
+      port="7275"
+      tls="true"
+  />
+
+  <cdma_profile name="CDMA1"
+  />
+
+  <agps_setting
+    ignore_si_for_e911="true"
+  />
+
+  <gnss_setting
+  />
+
+  <cp_setting
+    cp_auto_reset="true"
+  />
+
+  <up_setting
+    ca_enable="true"
+    preferred_2g3g_cell_age="0"
+    up_lpp_in_2g3g_disable="true"
+    up_rrlp_in_4g_disable="true"
+  />
+
+</mtk_agps_profiles>

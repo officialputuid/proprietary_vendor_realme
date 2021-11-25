@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file.
+       cur_supl_profile is supported but other supl_profile are ignored.
+       auto_profile_enable is not supported.
+  -->
+
+  <!-- For SI, OK to use Google SUPL Server on Internet.
+       For NI, Verizon SUPL server will specify its SLP address in SUPL_INIT. -->
+  <cur_supl_profile name="Verizon_Wireless"
+      addr="supl.google.com"
+      port="7275"
+      tls="true"
+  />
+
+  <cdma_profile name="CDMA1"
+  />
+
+  <agps_setting
+    ignore_si_for_e911="true"
+  />
+
+  <gnss_setting
+    a_glonass_satellite_enable="false"
+    a_beidou_satellite_enable="false"
+    a_galileo_satellite_enable="false"
+  />
+
+  <cp_setting
+    cp_auto_reset="true"
+    reject_non911_nilr_enable="true"
+  />
+
+  <up_setting
+    ca_enable="true"
+    supl_version="2"
+    ut3="30"
+    supl_ver_minor="0"
+    supl_ver_ser_ind="4"
+    force_otdoa_assist_req="true"
+  />
+
+</mtk_agps_profiles>

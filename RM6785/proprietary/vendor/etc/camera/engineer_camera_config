@@ -1,0 +1,456 @@
+[
+    {
+        "VendorTag": "com.oppo.eng.flash.light.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.rear.single.flash.light.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.flash.light.front.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.flash.light.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.flash.light.auto.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.second.back.camera.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.third.rear.camera.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.fourth.rear.camera.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.new.triple.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.new.triple.verificate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.interference.video.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.ois.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.focus.motor.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.ae.sync.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.ois.noise.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.pdaf.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.laser.focus.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.third.rear.camera.ois.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.eis.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.aperture.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.tof.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.tof.depth.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.tof.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.tof.verificate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.ir.camera.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.ir.camera.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.dual.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.dual.verificate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.triple.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.triple.verificate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.zoom.loop.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.arcsoft.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.arcsoft.verificate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.aftersale.top.tip.array",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "543,280"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.aftersale.bottom.tip.array",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "543,1180"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.triple.calibrate.aftersale.focus.lens",
+        "Type": "Int32",
+        "Count": "1",
+        "Value": "3000"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.dual.calibrate.aftersale.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.triple.calibrate.aftersale.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibration.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "4000x3000"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibrate.second.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "2304x1728"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibrate.third.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "4000x3000"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.portrait.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "4000x3000"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.ae.sync.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "4000x3000"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.ae.sync.second.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "3264x2448"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.ae.sync.third.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "4000x3000"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.dual.calibration.input.yuv.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.dual.calibration.buffer.lost.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.aftersale.chart.size.array",
+        "Type": "Int32",
+        "Count": "4",
+        "Value": "295,475,785,965"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.second.rear.flash.light.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.third.rear.flash.light.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.fourth.rear.flash.light.calibrate.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibration.performance",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.portrait.fullbody.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.hidl.support",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "1"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibrate.project.name",
+        "Type": "Byte",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibration.algo",
+        "Type": "String",
+        "Count": "1",
+        "Value": "cp"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibration.params.name",
+        "Type": "String",
+        "Count": "1",
+        "Value": "CalibrationOppoC.json"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.verification.params.name",
+        "Type": "String",
+        "Count": "1",
+        "Value": "VerificationOppoC.json"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibration.yshift",
+        "Type": "Float",
+        "Count": "1",
+        "Value": "10.15"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibration.zshift",
+        "Type": "Float",
+        "Count": "1",
+        "Value": "0"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.calibration.roll",
+        "Type": "Float",
+        "Count": "1",
+        "Value": "1.45"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.oiscalibration.params.name",
+        "Type": "String",
+        "Count": "1",
+        "Value": ""
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.oiscalibration.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "4608x3456"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.oiscalibrate.second.rear.size",
+        "Type": "Int32",
+        "Count": "2",
+        "Value": "2592x1940"
+    },
+
+    {
+        "VendorTag": "com.oppo.eng.camera.oisverification.params.name",
+        "Type": "String",
+        "Count": "1",
+        "Value": ""
+    }
+]

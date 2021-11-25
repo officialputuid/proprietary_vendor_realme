@@ -1,0 +1,10 @@
+#copy from device/mediatek/common/init.volte.rc
+
+service vendor.volte_ua /vendor/bin/volte_ua
+    class core
+    socket volte_ua stream 660 root system
+    user root
+    group system log inet radio net_admin root
+    oneshot
+    disabled
+

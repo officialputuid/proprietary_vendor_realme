@@ -1,0 +1,17 @@
+#
+# MAL related services (Begin)
+#
+
+on init
+    restart volte_md_status
+
+service volte_md_status /system/vendor/bin/volte_md_status
+    class core
+    user root
+    group radio log system
+    oneshot
+    disabled
+
+#
+# MAL related services (End)
+#

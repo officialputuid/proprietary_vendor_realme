@@ -1,0 +1,8 @@
+on early-init
+    # Change AOSP default tcp congestion control from cubic to bic.
+    write /proc/sys/net/ipv4/tcp_congestion_control bic
+
+    # When ftp is active mode, if nf_conntrack_helper is default value--0,
+    # ftp download/upload session will fail with usb tethering, because ftp
+    # response msg doesnot change ip to 192.168.42.xx manually
+    write /proc/sys/net/netfilter/nf_conntrack_helper 1

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<aurisys_config>
+    <!--
+     * =========================================================================
+     *   table of uplink/downlink library mapping for each scenario
+     * =========================================================================
+    -->
+    <aurisys_scenarios>
+        <!-- for aurisys_scene playback with smartpa for all mixed streamout -->
+        <aurisys_scenario aurisys_scenario="AURISYS_SCENARIO_DSP_PLAYBACK_SMARTPA">
+            <downlink_library_name_list digital_gain_lib_name="">
+                <library name="si_sixth"/>
+            </downlink_library_name_list>
+        </aurisys_scenario>
+        <!-- for aurisys_scene call final for sph final process -->
+        <aurisys_scenario aurisys_scenario="AURISYS_SCENARIO_DSP_CALL_FINAL">
+            <downlink_library_name_list digital_gain_lib_name="">
+                <library name="si_sixth"/>
+            </downlink_library_name_list>
+        </aurisys_scenario>
+        <!-- for aurisys_scene ktv for headphone feedback process -->
+        <aurisys_scenario aurisys_scenario="AURISYS_SCENARIO_DSP_KTV">
+            <downlink_library_name_list digital_gain_lib_name="">
+                <library name="ktv_reverb"/>
+            </downlink_library_name_list>
+        </aurisys_scenario>
+        <!-- for aurisys_scene record streamin normal -->
+        <aurisys_scenario aurisys_scenario="AURISYS_SCENARIO_DSP_RECORD">
+            <uplink_library_name_list digital_gain_lib_name="fv_speech">
+                <library name="fv_speech"/>
+            </uplink_library_name_list>
+        </aurisys_scenario>
+    </aurisys_scenarios>
+    <!--
+     * =========================================================================
+     *   DSP HAL Librarys
+     * =========================================================================
+    -->
+    <hal_librarys>
+        <!-- Yongzhi.Zhang@PSW.MM.AudioDriver.Feature.1209435, 2019/03/09, add for P90 KTV -->
+        <!--
+         * =====================================================================
+         *   KTV Reverb
+         * =====================================================================
+        -->
+        <library name="ktv_reverb"
+                 lib_path="/vendor/lib/libaurisysdemo.so"
+                 lib64_path="/vendor/lib64/libaurisysdemo.so"
+                 param_path=""
+                 lib_dump_path="AUTO"
+                 adb_cmd_key="KTVREVERB">
+            <components>
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_KTV"
+                           sample_rate="48000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="5"
+                           b_interleave="0"
+                           enable_log="1"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <downlink_process>
+                        <buf_in  data_buf_type="DATA_BUF_DOWNLINK_IN"
+                                 num_channels="1"/>
+                        <buf_out data_buf_type="DATA_BUF_DOWNLINK_OUT"
+                                 num_channels="1"/>
+                    </downlink_process>
+                </component>
+            </components>
+        </library>
+        <!--
+         * =====================================================================
+         *   SI-IN sixth
+         * =====================================================================
+        -->
+        <library name="si_sixth"
+                 lib_path="/vendor/lib/libsi_sixth.so"
+                 lib64_path="/vendor/lib64/libsi_sixth.so"
+                 param_path="/odm/etc/audio/sixth/"
+                 lib_dump_path="AUTO"
+                 adb_cmd_key="SIXTH">
+            <components>
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_PLAYBACK_SMARTPA"
+                           sample_rate="8000,11025,12000,16000,22050,24000,32000,44100,48000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="0"
+                           b_interleave="1"
+                           enable_log="1"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <downlink_process>
+                        <buf_in  data_buf_type="DATA_BUF_DOWNLINK_IN"
+                                 num_channels="1,2"/>
+                        <buf_out data_buf_type="DATA_BUF_DOWNLINK_OUT"
+                                 num_channels="1,2"/>
+                    </downlink_process>
+                </component>
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_CALL_FINAL"
+                           sample_rate="8000,11025,12000,16000,22050,24000,32000,44100,48000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="20"
+                           b_interleave="0"
+                           enable_log="1"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <downlink_process>
+                        <buf_in  data_buf_type="DATA_BUF_DOWNLINK_IN"
+                                 num_channels="1"/>
+                        <buf_out data_buf_type="DATA_BUF_DOWNLINK_OUT"
+                                 num_channels="1"/>
+                    </downlink_process>
+                </component>
+            </components>
+        </library>
+        <!--
+         * =====================================================================
+         *   AWINIC smartpa
+         * =====================================================================
+        -->
+        <library name="smartpa_awinic"
+                 lib_path="/vendor/lib/libawinicsmartpaparse.so"
+                 lib64_path="/vendor/lib64/libawinicsmartpaparse.so"
+                 param_path="/vendor/etc/smartpa_param"
+                 lib_dump_path="AUTO"
+                 adb_cmd_key="AWINIC">
+            <components>
+                <!-- for aurisys_scene playback with smartpa -->
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_PLAYBACK_SMARTPA"
+                           sample_rate="48000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="0"
+                           b_interleave="1"
+                           enable_log="0"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <downlink_process>
+                        <buf_in  data_buf_type="DATA_BUF_DOWNLINK_IN"
+                                 num_channels="2"/>
+                        <buf_out data_buf_type="DATA_BUF_DOWNLINK_OUT"
+                                 num_channels="2"/>
+                    </downlink_process>
+                </component>
+                <!-- for aurisys_scene call final -->
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_CALL_FINAL"
+                           sample_rate="48000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="0"
+                           b_interleave="1"
+                           enable_log="0"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <downlink_process>
+                        <buf_in  data_buf_type="DATA_BUF_DOWNLINK_IN"
+                                 num_channels="2"/>
+                        <buf_out data_buf_type="DATA_BUF_DOWNLINK_OUT"
+                                 num_channels="2"/>
+                    </downlink_process>
+                </component>
+            </components>
+        </library>
+        <!--
+         * =====================================================================
+         *   FV Speech
+         * =====================================================================
+        -->
+        <library name="fv_speech"
+                 lib_path="/vendor/lib/libfvaudio.so"
+                 lib64_path="/vendor/lib64/libfvaudio.so"
+                 param_path="/vendor/etc/aurisys_param/FV-SAM-MTKXX.dat"
+                 lib_dump_path="AUTO"
+                 adb_cmd_key="FV_SPH">
+            <components>
+                <!-- for aurisys_scene call -->
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_PHONE_CALL"
+                           sample_rate="8000,16000,32000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="20"
+                           b_interleave="0"
+                           enable_log="0"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <uplink_process>
+                        <buf_in  data_buf_type="DATA_BUF_UPLINK_IN"
+                                 num_channels="1,2"/>
+                        <buf_out data_buf_type="DATA_BUF_UPLINK_OUT"
+                                 num_channels="1"/>
+                        <buf_refs>
+                            <buf_ref data_buf_type="DATA_BUF_ECHO_REF"
+                                     num_channels="1"/>
+                        </buf_refs>
+                    </uplink_process>
+                    <downlink_process>
+                        <buf_in  data_buf_type="DATA_BUF_DOWNLINK_IN"
+                                 num_channels="1"/>
+                        <buf_out data_buf_type="DATA_BUF_DOWNLINK_OUT"
+                                 num_channels="1"/>
+                    </downlink_process>
+                </component>
+                <!-- for aurisys_scene voip -->
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_VOIP"
+                           sample_rate="16000,32000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="10"
+                           b_interleave="0"
+                           enable_log="0"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <uplink_process>
+                        <buf_in  data_buf_type="DATA_BUF_UPLINK_IN"
+                                 num_channels="2"/>
+                        <buf_out data_buf_type="DATA_BUF_UPLINK_OUT"
+                                 num_channels="1"/>
+                        <buf_refs>
+                            <buf_ref data_buf_type="DATA_BUF_ECHO_REF"
+                                     num_channels="1"/>
+                        </buf_refs>
+                    </uplink_process>
+                    <downlink_process>
+                        <buf_in  data_buf_type="DATA_BUF_DOWNLINK_IN"
+                                 num_channels="1"/>
+                        <buf_out data_buf_type="DATA_BUF_DOWNLINK_OUT"
+                                 num_channels="1"/>
+                    </downlink_process>
+                </component>
+                <!-- for aurisys_scene record streamin normal -->
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_RECORD"
+                           sample_rate="48000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="10"
+                           b_interleave="0"
+                           enable_log="0"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <uplink_process>
+                        <buf_in  data_buf_type="DATA_BUF_UPLINK_IN"
+                                 num_channels="2"/>
+                        <buf_out data_buf_type="DATA_BUF_UPLINK_OUT"
+                                 num_channels="1,2"/>
+                    </uplink_process>
+                </component>
+                <!-- for aurisys_scene record streamin fast -->
+                <component aurisys_scenario="AURISYS_SCENARIO_DSP_RECORD_FAST"
+                           sample_rate="48000"
+                           audio_format="AUDIO_FORMAT_PCM_16_BIT"
+                           frame_size_ms="5"
+                           b_interleave="0"
+                           enable_log="0"
+                           enable_raw_dump="0"
+                           enable_lib_dump="0"
+                           enhancement_mode="0">
+                    <uplink_process>
+                        <buf_in  data_buf_type="DATA_BUF_UPLINK_IN"
+                                 num_channels="2"/>
+                        <buf_out data_buf_type="DATA_BUF_UPLINK_OUT"
+                                 num_channels="2"/>
+                    </uplink_process>
+                </component>
+            </components>
+        </library>
+    </hal_librarys>
+</aurisys_config>

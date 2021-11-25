@@ -1,0 +1,15 @@
+#
+## WFCA related services (Begin)
+#
+
+service wfca /vendor/bin/wfca
+    class core
+    socket wfca stream 660 root system
+    socket wfca_rds stream 660 root system
+    user root
+    group system log inet radio net_admin root wakelock
+
+#
+## WFCA related services (End)
+#
+

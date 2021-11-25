@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Band" wording="Bandwidth">
+			<Category name="NB" alias="Narrow Band"/>
+			<Category name="WB" alias="Wide Band"/>
+		</CategoryType>
+		<CategoryType name="Profile">
+			<Category name="RCV" alias="Normal,Handset,Lpbk_Handset,Handset_SV,HANDSET_PATH,HANDSET_EMERGENCY_PATH,HANDSET_EV_PATH,HANDSET_2MIC_PATH,HANDSET_2MICEV_PATH,LOOPBACK_HANDSET_PATH"/>
+			<Category name="HAC" alias="HANDSETHAC_PATH"/>
+			<Category name="HS" wording="Headset" alias="Headset,4_pole_Headset,Lpbk_Headset,HEADSET_PATH,LOOPBACK_HEADSET_PATH,LOOPBACK_NODELAY_HEADSET_MIC1,LOOPBACK_NODELAY_HEADSET_MIC2,LOOPBACK_NODELAY_HEADSET_MIC3,Lpbk_Nodelay_Headset_Mic1,Lpbk_Nodelay_Headset_Mic2,Lpbk_Nodelay_Headset_Mic3"/>
+			<Category name="HP" wording="Headphone" alias="3_pole_Headset"/>
+			<Category name="SPK" wording="Speaker" alias="Hands-free,1-mic NR,2-mic NR,Handsfree,MagiConference,Lpbk_Handsfree,Handsfree_SV,SPEAKER_PHONE_PATH,SPEAKER_EMERGENCY_PATH,SPK_EV_PATH,SPK_2MIC_PATH,SPK_2MICEV_PATH,LOOPBACK_SPEAKER_PATH"/>
+			<Category name="HS5POLE" alias="5_pole_Headset,5-pole headset,TP5PI_PATH"/>
+			<Category name="HS5POLE_ANC" alias="5_pole_Headset+ANC"/>
+			<Category name="BT" alias="BT_Earphone,BT_NREC_Off,BLUETOOTH_PATH,STEREO_BLUETOOTH_PATH,BT_NSEC_OFF_PATH,BLUETOOTH_16_PATH,BT_NSEC_OFF_16_PATH,BT_NREC_On_NB,BT_NREC_On_WB"/>
+			<Category name="TTY" alias="Tty_HCO_Handset,Tty_VCO_Handset,Tty_HCO_Handsfree,Tty_VCO_Handsfree,TTY_PATH"/>
+			<Category name="USB" alias="Usb_Headset"/>
+			<Category name="HEARING_AID" alias="HEARING_AID"/>
+			<Category name="MISC" alias="HFK_PATH,CALLFWD_PATH,SLD_PATH,SPEAKERDOCK_PATH,SPEAKERDOCK_EV_PATH"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dl_gain_visibility" type="int"/>
+		<Param name="ul_gain_visibility" type="int"/>
+		<Param name="stf_gain_visibility" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

@@ -1,0 +1,16 @@
+##LogProxyInVendor tool
+#on boot
+service loghidlvendorservice /vendor/bin/loghidlvendorservice
+    interface vendor.mediatek.hardware.log@1.0::ILog ModemLogHidlServer
+    interface vendor.mediatek.hardware.log@1.0::ILog MobileLogHidlServer
+    interface vendor.mediatek.hardware.log@1.0::ILog ATMWiFiHidlServer
+    interface vendor.mediatek.hardware.log@1.0::ILog ConnsysFWHidlServer
+    
+    class hal
+    class main
+    user shell
+    group system
+    disabled
+
+ on property:sys.boot_completed=1 && property:ro.boot.atm=enable
+   start loghidlvendorservice

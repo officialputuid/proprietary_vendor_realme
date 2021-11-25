@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioParam version="1.1">
+  <ParamTree>
+    <Param path="RCV" param_id="0"/>
+    <Param path="HAC" param_id="5"/>
+    <Param path="HS" param_id="1"/>
+    <Param path="HP" param_id="1"/>
+    <Param path="SPK" param_id="2"/>
+    <Param path="HS5POLE" param_id="4"/>
+    <Param path="HS5POLE_ANC" param_id="4"/>
+    <Param path="USB" param_id="1"/>
+    <Param path="Default,RCV" param_id="12"/>
+    <Param path="Default,HAC" param_id="12"/>
+    <Param path="Default,HS" param_id="13"/>
+    <Param path="Default,HP" param_id="13"/>
+    <Param path="Default,SPK" param_id="14"/>
+    <Param path="App1,RCV" param_id="15"/>
+    <Param path="App1,HAC" param_id="15"/>
+    <Param path="App1,HS" param_id="23"/>
+    <Param path="App1,HP" param_id="23"/>
+    <Param path="App1,SPK" param_id="24"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="dl_gain" value="22,19,16,13,10,7,4"/>
+      <Param name="ul_gain" value="34"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="dl_gain" value="27,24,21,18,15,12,9"/>
+      <Param name="ul_gain" value="34"/>
+    </ParamUnit>
+    <ParamUnit param_id="2">
+      <Param name="dl_gain" value="22,19,16,13,10,7,4"/>
+      <Param name="ul_gain" value="34"/>
+    </ParamUnit>
+    <ParamUnit param_id="4">
+      <Param name="dl_gain" value="27,24,21,18,15,12,9"/>
+      <Param name="ul_gain" value="24"/>
+    </ParamUnit>
+    <ParamUnit param_id="5">
+      <Param name="dl_gain" value="22,19,16,13,10,7,4"/>
+      <Param name="ul_gain" value="0"/>
+    </ParamUnit>
+    <ParamUnit param_id="14">
+      <Param name="dl_gain" value="21,19,16,13,10,7,4"/>
+      <Param name="ul_gain" value="15"/>
+    </ParamUnit>
+    <ParamUnit param_id="15">
+      <Param name="dl_gain" value="26,22,19,16,13,10,6"/>
+      <Param name="ul_gain" value="19"/>
+    </ParamUnit>
+    <ParamUnit param_id="23">
+      <Param name="dl_gain" value="26,22,18,14,10,6,2"/>
+      <Param name="ul_gain" value="26"/>
+    </ParamUnit>
+    <ParamUnit param_id="24">
+      <Param name="dl_gain" value="21,19,16,13,10,7,6"/>
+      <Param name="ul_gain" value="21"/>
+    </ParamUnit>
+    <ParamUnit param_id="12">
+      <Param name="dl_gain" value="24,20,16,12,8,4,0"/>
+      <Param name="ul_gain" value="19"/>
+    </ParamUnit>
+    <ParamUnit param_id="13">
+      <Param name="dl_gain" value="24,20,16,12,8,4,0"/>
+      <Param name="ul_gain" value="29"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>

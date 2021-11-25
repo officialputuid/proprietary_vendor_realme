@@ -1,0 +1,61 @@
+-----BEGIN CERTIFICATE-----
+MIIC2jCCAkOgAwIBAgIJALifyeI1CpzLMA0GCSqGSIb3DQEBCwUAMIGFMQswCQYD
+VQQGEwJUVzESMBAGA1UECAwJTmV3VGFpcGVpMQwwCgYDVQQKDANFUlQxDDAKBgNV
+BAsMA0lPVDEfMB0GA1UEAwwWZ21wYzAyLmVydC5lcmljc3Nvbi5zZTElMCMGCSqG
+SIb3DQEJARYWYXBwbGUueWluQGVyaWNzc29uLmNvbTAeFw0xODA1MjMwMzU4NTZa
+Fw0yMTA1MjIwMzU4NTZaMIGFMQswCQYDVQQGEwJUVzESMBAGA1UECAwJTmV3VGFp
+cGVpMQwwCgYDVQQKDANFUlQxDDAKBgNVBAsMA0lPVDEfMB0GA1UEAwwWZ21wYzAy
+LmVydC5lcmljc3Nvbi5zZTElMCMGCSqGSIb3DQEJARYWYXBwbGUueWluQGVyaWNz
+c29uLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAzMh7iP+lhdC/l104
+I1wDMPNzsEhcN21rRLaanvEx2ERwpGSqiNoj7G2PHf4ASCUgXoRZAWWdTjvoYYdt
+QE6/ZmxdbJac8Mj5oRnPdl436AF/tSqlxHwNphyNiYBl8y1x2App3s1htZ+vcKRX
+XGiRS/sSwYhWXioq4hV1EmCNXUsCAwEAAaNQME4wHQYDVR0OBBYEFHIwSo9Np1t0
+wKtHOdlXA+to96J5MB8GA1UdIwQYMBaAFHIwSo9Np1t0wKtHOdlXA+to96J5MAwG
+A1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADgYEAZo/yvpw9tzDf0laiUtGPCKap
++oDyKAh3o5vkt6/SSdCkw/zI+w76jq/LPLqKpGHPG9kON1n9LRHlyKvAeQKfJfKJ
++0zdaL5bhoSgAyCHgcwKvyLSonEqLXyRpLbNGIw6Ah4EQvQhS5UdP/2mv3REPE3e
+XgL2E3EZrJs1PosJTXA=
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            b8:9f:c9:e2:35:0a:9c:cb
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=TW, ST=NewTaipei, O=ERT, OU=IOT, CN=gmpc02.ert.ericsson.se/emailAddress=apple.yin@ericsson.com
+        Validity
+            Not Before: May 23 03:58:56 2018 GMT
+            Not After : May 22 03:58:56 2021 GMT
+        Subject: C=TW, ST=NewTaipei, O=ERT, OU=IOT, CN=gmpc02.ert.ericsson.se/emailAddress=apple.yin@ericsson.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:cc:c8:7b:88:ff:a5:85:d0:bf:97:5d:38:23:5c:
+                    03:30:f3:73:b0:48:5c:37:6d:6b:44:b6:9a:9e:f1:
+                    31:d8:44:70:a4:64:aa:88:da:23:ec:6d:8f:1d:fe:
+                    00:48:25:20:5e:84:59:01:65:9d:4e:3b:e8:61:87:
+                    6d:40:4e:bf:66:6c:5d:6c:96:9c:f0:c8:f9:a1:19:
+                    cf:76:5e:37:e8:01:7f:b5:2a:a5:c4:7c:0d:a6:1c:
+                    8d:89:80:65:f3:2d:71:d8:0a:69:de:cd:61:b5:9f:
+                    af:70:a4:57:5c:68:91:4b:fb:12:c1:88:56:5e:2a:
+                    2a:e2:15:75:12:60:8d:5d:4b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                72:30:4A:8F:4D:A7:5B:74:C0:AB:47:39:D9:57:03:EB:68:F7:A2:79
+            X509v3 Authority Key Identifier: 
+                keyid:72:30:4A:8F:4D:A7:5B:74:C0:AB:47:39:D9:57:03:EB:68:F7:A2:79
+
+            X509v3 Basic Constraints: 
+                CA:TRUE
+    Signature Algorithm: sha256WithRSAEncryption
+         66:8f:f2:be:9c:3d:b7:30:df:d2:56:a2:52:d1:8f:08:a6:a9:
+         fa:80:f2:28:08:77:a3:9b:e4:b7:af:d2:49:d0:a4:c3:fc:c8:
+         fb:0e:fa:8e:af:cb:3c:ba:8a:a4:61:cf:1b:d9:0e:37:59:fd:
+         2d:11:e5:c8:ab:c0:79:02:9f:25:f2:89:fb:4c:dd:68:be:5b:
+         86:84:a0:03:20:87:81:cc:0a:bf:22:d2:a2:71:2a:2d:7c:91:
+         a4:b6:cd:18:8c:3a:02:1e:04:42:f4:21:4b:95:1d:3f:fd:a6:
+         bf:74:44:3c:4d:de:5e:02:f6:13:71:19:ac:9b:35:3e:8b:09:
+         4d:70
+SHA1 Fingerprint=F3:EE:B7:21:95:D5:E8:FD:B8:4E:A4:4A:27:94:97:A5:FA:EB:F9:59

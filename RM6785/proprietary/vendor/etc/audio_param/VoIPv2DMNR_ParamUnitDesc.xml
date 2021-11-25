@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.1">
+	<CategoryTypeList>
+		<CategoryType name="Scene" feature_option="VIR_SCENE_CUSTOMIZATION_SUPPORT">
+			<Category name="Default"/>
+			<Category name="App1"/>
+			<Category name="App2"/>
+		</CategoryType>
+		<CategoryType name="Profile">
+			<Category name="Handset" alias="Normal,HAC"/>
+			<Category name="MagiConference" wording="2-mic NR"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dmnr_para" type="ushort_array">
+			<Field name="NC max band" array_index="0" bit="0,0"                                                  check_list="0,0-8K,1,0-4K"/>
+			<Field name="ABM Taps" array_index="0" bit="1,1"                                                     check_list="0,4taps,1,1tap"/>
+			<Field name="Initial Convergence" array_index="0" bit="2,2"                                          check_list="0,off,1,on"/>
+			<Field name="VAD hysteresis" array_index="0" bit="3,3"                                               check_list="0,on,1,off"/>
+			<Field name="Adaptive VAD hysteresis" array_index="0" bit="4,4"                                      check_list="0,on,1,off"/>
+			<Field name="Strong nonstationary suppression" array_index="0" bit="5,5"                             check_list="0,off,1,on"/>
+			<Field name="Less NS Gain" array_index="0" bit="6,8"                                                 check_list="0,off,1,weakest,2,weaker,3,weak,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Dynamic NS LB in normal position" array_index="0" bit="9,10"                            check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Wide-Angle" array_index="0" bit="11,12"                                check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Mic2" array_index="0" bit="13,14"                                      check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Adaptive Noise Fast Converge" array_index="0" bit="15,15"                               check_list="0,off,1,on"/>
+			<Field name="TMOS Detection THD in Mic1" array_index="1" bit="0,15"                                  check_list="0,default(100),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="Normal Position Harmonic Reconstruction" array_index="2" bit="0,1"                      check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Normal Position Pitch Protection" array_index="2" bit="2,2"                             check_list="0,off,1,on"/>
+			<Field name="WA Position Harmonic Reconstruction" array_index="2" bit="3,4"                          check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="WA Position Pitch Protection" array_index="2" bit="5,5"                                 check_list="0,off,1,on"/>
+			<Field name="Mic2 Harmonic Reconstruction" array_index="2" bit="6,7"                                 check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Mic2 Pitch Protection" array_index="2" bit="8,8"                                        check_list="0,off,1,on"/>
+			<Field name="Noise Level detection for Harmonic Reconstruction" array_index="2" bit="9,10"           check_list="0,off,1,apply HR only for high-SNR,2,apply HR only for medium-SNR,3,apply HR only for low-SNR"/>
+			<Field name="HR HB Skip" array_index="2" bit="11,11"                                                 check_list="0,no control,1,skip 4k-8K"/>
+			<Field name="HR HB Nonlinear shaping" array_index="2" bit="12,12"                                    check_list="0,off,1,on"/>
+			<Field name="NS Strong HB suppression" array_index="3" bit="0,0"                                     check_list="0,off,1,on"/>
+			<Field name="NS Strong DC suppression" array_index="3" bit="1,2"                                     check_list="0,off,1,93.75 Hz,2,156.25 Hz,3,250 Hz"/>
+			<Field name="Strong Suppression based on mic1 mic2 power difference information" array_index="3" bit="3,5"            check_list="0,weakest,1,weaker,2,weak,3,medium,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Noise underestimation when VAD on" array_index="3" bit="6,6"                                             check_list="0,off,1,on"/>
+			<Field name="Band 2 PD VAD" array_index="3" bit="7,7"                                                                 check_list="0,off,1,on"/>
+			<Field name="ABM update when mic2 blocking" array_index="3" bit="8,8"                                                 check_list="0,off,1,on"/>
+			<Field name="Stationary Noise Over-estimation for TMOS" array_index="3" bit="9,11"                                    check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/>
+			<Field name="ABM learning speed" array_index="3" bit="12,13"                                                          check_list="0,normal,1,fast,2,faster,3,very fast"/>
+			<Field name="ABM learn fast only in high SNR" array_index="3" bit="14,14"                                             check_list="0,bits 12~13 apply in all condition,1,bits 12~13 apply in high SNR condition(depends on NB cal-data[7])"/>
+			<Field name="Power Ratio Scaler Modifier" array_index="4" bit="0,15"                                                  check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="Switch or lower bound of MagiNRDual-NS Gain" array_index="5" bit="0,3"                                   check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Low SNR detection THD" array_index="5" bit="4,11"                                                        check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Band0p5 Power Ratio Scaler Modifier" array_index="6" bit="0,15"                                          check_list="0,default(WB normal Cal-data[40]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000)"/>
+			<Field name="Disable NC function threshold" array_index="7" bit="0,15"                                                check_list="0,default(600),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="SNRI Expander switch" array_index="8" bit="0"                                                            check_list="0,off,1,on"/>
+			<Field name="SNRI Expander Gain LB" array_index="8" bit="1,3"                                                         check_list="0,9 dB,1,12 dB,2,15 dB,3,18 dB,4,21 dB,5,24 dB,6,27 dB,7,30 dB"/>
+			<Field name="SNRI Expander Gain Under-estimation" array_index="8" bit="4"                                             check_list="0,6 dB,1,12 dB"/>
+			<Field name="SNRI Expander Triggered THD" array_index="8" bit="5,6"                                                   check_list="0,-30 dB(hardest),1,-28 dB,2,-26 dB,3,-24 dB(easiest)"/>
+
+			<Field name="Replace PR with PD VAD for cal-data switch" array_index="10" bit="0,0"                                   check_list="0,off,1,on"/>
+			<Field name="PR THD for cal-data switch" array_index="10" bit="1,2"                                                   check_list="0,1500,1,2500,2,3500,3,4000"/>
+			<Field name="WA switch VAD ONLY consider 1-mic VAD" array_index="10" bit="3,3"                                        check_list="0,off,1,on"/>
+			<Field name="Disable Well-cal VAD at WA" array_index="10" bit="4,4"                                                   check_list="0,off,1,on"/>
+			<Field name="Well-cal shadow VAD bias ctrl" array_index="10" bit="5,6"                                                check_list="0,300,1,600,2,1000,3,2000"/>
+			<Field name="Band1 SNR diff of cal-data as PD min" array_index="10" bit="7,7"                                         check_list="0,off,1,on"/>
+			<Field name="Disable PD VAD at WA" array_index="10" bit="8,8"                                                         check_list="0,off,1,on"/>
+			<Field name="Phone up or down cover range at WA" array_index="10" bit="9,12"                                          check_list="0,default(6dB),1,1dB(narrow),2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB(wide)"/>
+			<Field name="Fb stationary noise THD for high SNR for ENH_DMNR_VAD" array_index="10" bit="13,14"                      check_list="0,10000,1,15000,2,20000,3,30000"/>
+			<Field name="Consider Well-cal ABM PD VAD as ENH_DMNR_VAD" array_index="10" bit="15,15"                               check_list="0,off,1,on"/>
+			<Field name="ABM normal nlms stepsize under-estimate ratio" array_index="11" bit="0,1"                                check_list="0,32767(fast),1,16384,2,10922,3,8192(slow)"/>
+			<Field name="ABM shadow nlms stepsize" array_index="11" bit="2,3"                                                     check_list="0,5734(slow),1,9830,2,16384,3,22937(fast)"/>
+			<Field name="LB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="4,5"                                check_list="0,22000,1,16000,2,10000,3,8000"/>
+			<Field name="HB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="6,7"                                check_list="0,32750,1,32500,2,30000,3,25000"/>
+			<Field name="Disable NC at WA" array_index="11" bit="8,8"                                                             check_list="0,off,1,on"/>
+			<Field name="Start band of NC at WA" array_index="11" bit="9,10"                                                      check_list="0,off,1,1,2,2,3,3"/>
+			<Field name="End band of NC at WA" array_index="11" bit="11,12"                                                       check_list="0,off,1,12,2,9,3,6"/>
+			<Field name="Sb 1-mic vad THD for ABM normal stepsize at WA" array_index="11" bit="13,13"                             check_list="0,10000,1,16000"/>
+			<Field name="ABM shadow THD when cal-data switch" array_index="11" bit="14,15"                                        check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="Band range of GCC" array_index="12" bit="0,0"                                                            check_list="0,0~7,1,0~3"/>
+			<Field name="Rise rate for GCC PHAT" array_index="12" bit="1,2"                                                       check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Fall rate for GCC PHAT" array_index="12" bit="3,4"                                                       check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Band1 VAD on at WA" array_index="12" bit="5,5"                                                           check_list="0,off,1,on"/>
+			<Field name="GCC delay THD for ABM" array_index="12" bit="6,8"                                                        check_list="0,6,1,7,2,8,3,9,4,10,5,11,6,12,7,13"/>
+			<Field name="ABM VAD THD at normal if consider min of band1 + 2" array_index="12" bit="9,10"                          check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="AGC skip FE VAD" array_index="12" bit="11,11"                                                            check_list="0,on,1,off"/>
+			<Field name="Skip MCRA VAD for GCC updating" array_index="12" bit="12,12"                                             check_list="0,on,1,off"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="13,13"                                 check_list="0,off,1,on"/>
+			<Field name="Fix PD min at initial value" array_index="12" bit="14,14"                                                check_list="0,off,1,on"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="15,15"                                 check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob WA THD for ABM stepsize when high SNR at WA" array_index="13" bit="0,0"                  check_list="0,off,1,on"/>
+			<Field name="GCC prob THD for ABM stepsize when high SNR at WA" array_index="13" bit="1,2"                            check_list="0,500,1,1000,2,2000,3,3000"/>
+			<Field name="Consider SNR to adjust ABM VAD THD at WA" array_index="13" bit="3,3"                                     check_list="0,off,1,on"/>
+			<Field name="ABM VAD THD when high SNR at WA" array_index="13" bit="4,5"                                              check_list="0,6000,1,8000,2,10000,3,15000"/>
+			<Field name="ABM VAD THD when high SNR at normal if  consider band1 + 2" array_index="13" bit="6,7"                   check_list="0,10000,1,12000,2,16000,3,20000"/>
+			<Field name="GCC delay THD for ABM step size at WA" array_index="13" bit="8,11"                                       check_list="0,off,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15"/>
+			<Field name="ENH DMNR VAD skip consider high SNR VAD if FE VAD on at WA" array_index="13" bit="12,12"                 check_list="0,on,1,off"/>
+			<Field name="Skip FE VAD for ABM normal NLMS stepsize update" array_index="13" bit="14,14"                            check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob THD for ABM stepsize update when GCC only consider 0~2kHz" array_index="13" bit="15,15"  check_list="0,off,1,on"/>
+			<Field name="Low SNR detection THD for ABM VAD THD at WA" array_index="14" bit="4,11"                                 check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Normal power ratio THD for cal-data switch if only calibrate normal position" array_index="15" bit="0,15" check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="TMOS threshold for WA" array_index="16" bit="0,15"                                                       check_list="0,default(same as NB cal-data[1]),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="WA TMOS control" array_index="17" bit="0,0"                                                              check_list="0,off,1,on"/>
+
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2" array_index="20" bit="0,3"                                   check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic2 stationary noise tracking strength" array_index="20" bit="4,5"                                      check_list="0,suppress least,1,suppress less,2,suppress more,3,suppress most"/>
+			<Field name="Mic2 stationary noise tracking VAD threshold" array_index="20" bit="6,7"                                 check_list="0,suppress most,1,suppress more,2,suppress less,3,suppress least"/>
+			<Field name="Switch to Mic1 speed THD" array_index="20" bit="8,9"                                                     check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Switch to Mic2 speed THD" array_index="20" bit="10,11"                                                   check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2 TMOS" array_index="20" bit="12,13"                            check_list="0,off,1,3 dB,2,6 dB,3,9 dB"/>
+			<Field name="Mic2 direction VAD threshold" array_index="20" bit="14,15"                                               check_list="0,loosest,1,loose,2,strick,3,strickest"/>
+			<Field name="Reduce DMNR adaptive TX gain when mic2" array_index="21" bit="0,3"                                       check_list="0,0 dB,1,-1 dB,2,-2 dB,3,-3 dB,4,-4 dB,5,-5 dB,6,-6 dB,7,-7 dB,8,0 dB,9,1 dB,10,2 dB,11,3 dB,12,4 dB,13,5 dB,14,6 dB,15,7 dB"/>
+			<Field name="Mic siwtch algorithm 250~750Hz mic1/mic2 energy threshold" array_index="21" bit="4,5"                    check_list="0,-2 dB,1,-0.06 dB,2,-4 dB,3,-6 dB"/>
+			<Field name="prevent finger touch from selecting to mic1" array_index="21" bit="8,9"                                  check_list="0,off,1,-15 dB,2,-12 dB,3,-10 dB"/>
+			<Field name="Mic2 direction detection" array_index="21" bit="10,10"                                                   check_list="0,on,1,off"/>
+			<Field name="Mic switch algorithm delay control" array_index="21" bit="11,14"                                         check_list="0,10,1,11,2,12,3,13,4,14,5,15,6,16,7,17,8,18,9,19,10,20,11,21,12,22,13,23,14,24,15,25"/>
+			<Field name="Mic switch PD speed" array_index="21" bit="15,15"                                                        check_list="0,fast,1,slow"/>
+			<Field name="TMOS Detection THD in Mic2" array_index="22" bit="0,15"                                                  check_list="0,15000,1500,1500,3000,3000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="mic1/mic2 HB range" array_index="23" bit="0,0"                                                           check_list="0,2-4 kHz,1,1-3 kHz"/>
+			<Field name="Mic2 direction VAD enable" array_index="23" bit="1,1"                                                    check_list="0,off,1,on"/>
+			<Field name="Mic siwtch algorithm 0~250 Hz mic1/mic2 energy threshold" array_index="23" bit="2,3"                     check_list="0,-18 dB,1,-13 dB,2,-10 dB,3,off"/>
+			<Field name="DMNR ASLR in noisy signal control" array_index="23" bit="4,4"                                            check_list="0,off,1,on"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold1" array_index="23" bit="5,6"               check_list="0,-7.4 dB,1,-8.6 dB,2,-10.4 dB,3,off"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold2" array_index="23" bit="7,8"               check_list="0,-3.4 dB,1,-5.2 dB,2,-2.2 dB,3,-1.2 dB"/>
+			<Field name="Switch to mic1 speed THD" array_index="23" bit="9,10"                                                    check_list="0,450 ms,1,225 ms,2,300 ms,3,375 ms"/>
+			<Field name="WA Ctrl Switch for Mic2 Blocking" array_index="23" bit="11,11"                                           check_list="0,on,1,off"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic1" array_index="23" bit="12,15"                                 check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic siwtch algorithm HB 2k~4k Hz (if cal [23] bit 0 = 1 HB is 1k~3k)" array_index="24" bit="0,15"        check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/>
+			<Field name="Mic1 or Mic2 band 1 power thd for one-mic VAD" array_index="25" bit="0,15"                               check_list="0,default(1500 -64.5 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,2000, -63 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="Mic1 high band power threshold" array_index="26" bit="0,15"                                              check_list="0,default(2000 -63 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,1500, -64.5 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="FE VAD thd for mic switch" array_index="27" bit="0,15"                                                   check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<!--Field name="Mic2 HB thd for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="28" bit="0,15" check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB2 thd2 for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="29" bit="0,15" check_list="0,default(10000 -5 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,4096,-9 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB Abs Power thd for mic2 Blocking" array_index="30" bit="0,15" check_list="0,default(1500)"/-->
+			<!--Field name="Mic1 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="31" bit="0,15" check_list="0,default(5000)"/-->
+			<!--Field name="Mic2 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="32" bit="0,15" check_list="0,default(150)"/-->
+			<!--Field name="Mic2 LB2 Abs Power thd for mic2 Blocking (250~750 HZ (Band1))" array_index="33" bit="0,15" check_list="0,default(20000)"/-->
+			<!--Field name="Mic2 FB Abs Power thd for mic2 Blocking (0~8K HZ)" array_index="34" bit="0,15" check_list="0,default(10000)"/-->
+			<!--Field name="Stationary Noise Over-estimation for Mic2 Blocking" array_index="35" bit="0,2" check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/-->
+			<Field name="Mic2 band0 Power thrshold for mic Selection mic2 band 0 power threshold" array_index="36" bit="0,15"     check_list="0,default(7500 -39.5 dB),1000,-48.2 dB,3000,-43.5 dB,5000,-41.2 dB,10000,-38.2 dB,20000,-35.2 dB,30000,-33.5 dB"/>
+			<Field name="FE VAD thd for VCE" array_index="40" bit="0,15"                                                          check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<Field name="Noise type detection NB switch" array_index="0" bit="0,0"                                                check_list="0,off,1,on"/>
+			<Field name="Noise type detection WB switch" array_index="0" bit="1,1"                                                check_list="0,off,1,on"/>
+			<Field name="Noise type detection rejection THD" array_index="0" bit="9,10"                                           check_list="0,lowest,1,lower,2,stronger,3,strongest"/>
+			<Field name="Noise type detection detection confidence THD" array_index="0" bit="11,12"                               check_list="0,loosest,1,looser,2,stricter,3,strictest"/>
+			<Field name="Noise type detection detection speed" array_index="0" bit="13,14"                                        check_list="0,slowest,1,slower,2,faster,3,fastest"/>
+			<Field name="Noise type detection using default model" array_index="0" bit="15"                                       check_list="0,on,1,off"/>
+			<Field name="Noise type specialization enable at speechband(pub)" array_index="1" bit="0,0"                           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at speechband(pub)" array_index="1" bit="1,4"                   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at speechband(pub)" array_index="1" bit="5,8"                   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at speechband(pub)" array_index="1" bit="9,12"                check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at midband(road,corssroad,train)" array_index="2" bit="0,0"             check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at midband(road,corssroad,train)" array_index="2" bit="1,4"     check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at midband(road,corssroad,train)" array_index="2" bit="5,8"     check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at midband(road,corssroad,train)" array_index="2" bit="9,12"  check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at lowband(car)" array_index="3" bit="0,0"                              check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at lowband(car)" array_index="3" bit="1,4"                      check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at lowband(car)" array_index="3" bit="5,8"                      check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at lowband(car)" array_index="3" bit="9,12"                   check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="0,0"           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="1,4"   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="5,8"   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="9,12" check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+		</Param>
+		<Param name="dmnr_para_nb1" type="ushort_array">
+			<Field name="NC max band" array_index="0" bit="0,0"                                                                   check_list="0,0-8K,1,0-4K"/>
+			<Field name="ABM Taps" array_index="0" bit="1,1"                                                                      check_list="0,4taps,1,1tap"/>
+			<Field name="Initial Convergence" array_index="0" bit="2,2"                                                           check_list="0,off,1,on"/>
+			<Field name="VAD hysteresis" array_index="0" bit="3,3"                                                                check_list="0,on,1,off"/>
+			<Field name="Adaptive VAD hysteresis" array_index="0" bit="4,4"                                                       check_list="0,on,1,off"/>
+			<Field name="Strong nonstationary suppression" array_index="0" bit="5,5"                                              check_list="0,off,1,on"/>
+			<Field name="Less NS Gain" array_index="0" bit="6,8"                                                                  check_list="0,off,1,weakest,2,weaker,3,weak,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Dynamic NS LB in normal position" array_index="0" bit="9,10"                                             check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Wide-Angle" array_index="0" bit="11,12"                                                 check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Mic2" array_index="0" bit="13,14"                                                       check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Adaptive Noise Fast Converge" array_index="0" bit="15,15"                                                check_list="0,off,1,on"/>
+			<Field name="TMOS Detection THD in Mic1" array_index="1" bit="0,15"                                                   check_list="0,default(100),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="Normal Position Harmonic Reconstruction" array_index="2" bit="0,1"                                       check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Normal Position Pitch Protection" array_index="2" bit="2,2"                                              check_list="0,off,1,on"/>
+			<Field name="WA Position Harmonic Reconstruction" array_index="2" bit="3,4"                                           check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="WA Position Pitch Protection" array_index="2" bit="5,5"                                                  check_list="0,off,1,on"/>
+			<Field name="Mic2 Harmonic Reconstruction" array_index="2" bit="6,7"                                                  check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Mic2 Pitch Protection" array_index="2" bit="8,8"                                                         check_list="0,off,1,on"/>
+			<Field name="Noise Level detection for Harmonic Reconstruction" array_index="2" bit="9,10"                            check_list="0,off,1,apply HR only for high-SNR,2,apply HR only for medium-SNR,3,apply HR only for low-SNR"/>
+			<Field name="HR HB Skip" array_index="2" bit="11,11"                                                                  check_list="0,no control,1,skip 4k-8K"/>
+			<Field name="HR HB Nonlinear shaping" array_index="2" bit="12,12"                                                     check_list="0,off,1,on"/>
+			<Field name="NS Strong HB suppression" array_index="3" bit="0,0"                                                      check_list="0,off,1,on"/>
+			<Field name="NS Strong DC suppression" array_index="3" bit="1,2"                                                      check_list="0,off,1,93.75 Hz,2,156.25 Hz,3,250 Hz"/>
+			<Field name="Strong Suppression based on mic1 mic2 power difference information" array_index="3" bit="3,5"            check_list="0,weakest,1,weaker,2,weak,3,medium,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Noise underestimation when VAD on" array_index="3" bit="6,6"                                             check_list="0,off,1,on"/>
+			<Field name="Band 2 PD VAD" array_index="3" bit="7,7"                                                                 check_list="0,off,1,on"/>
+			<Field name="ABM update when mic2 blocking" array_index="3" bit="8,8"                                                 check_list="0,off,1,on"/>
+			<Field name="Stationary Noise Over-estimation for TMOS" array_index="3" bit="9,11"                                    check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/>
+			<Field name="ABM learning speed" array_index="3" bit="12,13"                                                          check_list="0,normal,1,fast,2,faster,3,very fast"/>
+			<Field name="ABM learn fast only in high SNR" array_index="3" bit="14,14"                                             check_list="0,bits 12~13 apply in all condition,1,bits 12~13 apply in high SNR condition(depends on NB cal-data[7])"/>
+			<Field name="Power Ratio Scaler Modifier" array_index="4" bit="0,15"                                                  check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="Switch or lower bound of MagiNRDual-NS Gain" array_index="5" bit="0,3"                                   check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Low SNR detection THD" array_index="5" bit="4,11"                                                        check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Band0p5 Power Ratio Scaler Modifier" array_index="6" bit="0,15"                                          check_list="0,default(WB normal Cal-data[40]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000)"/>
+			<Field name="Disable NC function threshold" array_index="7" bit="0,15"                                                check_list="0,default(600),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="SNRI Expander switch" array_index="8" bit="0"                                                            check_list="0,off,1,on"/>
+			<Field name="SNRI Expander Gain LB" array_index="8" bit="1,3"                                                         check_list="0,9 dB,1,12 dB,2,15 dB,3,18 dB,4,21 dB,5,24 dB,6,27 dB,7,30 dB"/>
+			<Field name="SNRI Expander Gain Under-estimation" array_index="8" bit="4"                                             check_list="0,6 dB,1,12 dB"/>
+			<Field name="SNRI Expander Triggered THD" array_index="8" bit="5,6"                                                   check_list="0,-30 dB(hardest),1,-28 dB,2,-26 dB,3,-24 dB(easiest)"/>
+
+			<Field name="Replace PR with PD VAD for cal-data switch" array_index="10" bit="0,0"                                   check_list="0,off,1,on"/>
+			<Field name="PR THD for cal-data switch" array_index="10" bit="1,2"                                                   check_list="0,1500,1,2500,2,3500,3,4000"/>
+			<Field name="WA switch VAD ONLY consider 1-mic VAD" array_index="10" bit="3,3"                                        check_list="0,off,1,on"/>
+			<Field name="Disable Well-cal VAD at WA" array_index="10" bit="4,4"                                                   check_list="0,off,1,on"/>
+			<Field name="Well-cal shadow VAD bias ctrl" array_index="10" bit="5,6"                                                check_list="0,300,1,600,2,1000,3,2000"/>
+			<Field name="Band1 SNR diff of cal-data as PD min" array_index="10" bit="7,7"                                         check_list="0,off,1,on"/>
+			<Field name="Disable PD VAD at WA" array_index="10" bit="8,8"                                                         check_list="0,off,1,on"/>
+			<Field name="Phone up or down cover range at WA" array_index="10" bit="9,12"                                          check_list="0,default(6dB),1,1dB(narrow),2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB(wide)"/>
+			<Field name="Fb stationary noise THD for high SNR for ENH_DMNR_VAD" array_index="10" bit="13,14"                      check_list="0,10000,1,15000,2,20000,3,30000"/>
+			<Field name="Consider Well-cal ABM PD VAD as ENH_DMNR_VAD" array_index="10" bit="15,15"                               check_list="0,off,1,on"/>
+			<Field name="ABM normal nlms stepsize under-estimate ratio" array_index="11" bit="0,1"                                check_list="0,32767(fast),1,16384,2,10922,3,8192(slow)"/>
+			<Field name="ABM shadow nlms stepsize" array_index="11" bit="2,3"                                                     check_list="0,5734(slow),1,9830,2,16384,3,22937(fast)"/>
+			<Field name="LB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="4,5"                                check_list="0,22000,1,16000,2,10000,3,8000"/>
+			<Field name="HB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="6,7"                                check_list="0,32750,1,32500,2,30000,3,25000"/>
+			<Field name="Disable NC at WA" array_index="11" bit="8,8"                                                             check_list="0,off,1,on"/>
+			<Field name="Start band of NC at WA" array_index="11" bit="9,10"                                                      check_list="0,off,1,1,2,2,3,3"/>
+			<Field name="End band of NC at WA" array_index="11" bit="11,12"                                                       check_list="0,off,1,12,2,9,3,6"/>
+			<Field name="Sb 1-mic vad THD for ABM normal stepsize at WA" array_index="11" bit="13,13"                             check_list="0,10000,1,16000"/>
+			<Field name="ABM shadow THD when cal-data switch" array_index="11" bit="14,15"                                        check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="Band range of GCC" array_index="12" bit="0,0"                                                            check_list="0,0~7,1,0~3"/>
+			<Field name="Rise rate for GCC PHAT" array_index="12" bit="1,2"                                                       check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Fall rate for GCC PHAT" array_index="12" bit="3,4"                                                       check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Band1 VAD on at WA" array_index="12" bit="5,5"                                                           check_list="0,off,1,on"/>
+			<Field name="GCC delay THD for ABM" array_index="12" bit="6,8"                                                        check_list="0,6,1,7,2,8,3,9,4,10,5,11,6,12,7,13"/>
+			<Field name="ABM VAD THD at normal if consider min of band1 + 2" array_index="12" bit="9,10"                          check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="AGC skip FE VAD" array_index="12" bit="11,11"                                                            check_list="0,on,1,off"/>
+			<Field name="Skip MCRA VAD for GCC updating" array_index="12" bit="12,12"                                             check_list="0,on,1,off"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="13,13"                                 check_list="0,off,1,on"/>
+			<Field name="Fix PD min at initial value" array_index="12" bit="14,14"                                                check_list="0,off,1,on"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="15,15"                                 check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob WA THD for ABM stepsize when high SNR at WA" array_index="13" bit="0,0"                  check_list="0,off,1,on"/>
+			<Field name="GCC prob THD for ABM stepsize when high SNR at WA" array_index="13" bit="1,2"                            check_list="0,500,1,1000,2,2000,3,3000"/>
+			<Field name="Consider SNR to adjust ABM VAD THD at WA" array_index="13" bit="3,3"                                     check_list="0,off,1,on"/>
+			<Field name="ABM VAD THD when high SNR at WA" array_index="13" bit="4,5"                                              check_list="0,6000,1,8000,2,10000,3,15000"/>
+			<Field name="ABM VAD THD when high SNR at normal if  consider band1 + 2" array_index="13" bit="6,7"                   check_list="0,10000,1,12000,2,16000,3,20000"/>
+			<Field name="GCC delay THD for ABM step size at WA" array_index="13" bit="8,11"                                       check_list="0,off,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15"/>
+			<Field name="ENH DMNR VAD skip consider high SNR VAD if FE VAD on at WA" array_index="13" bit="12,12"                 check_list="0,on,1,off"/>
+			<Field name="Skip FE VAD for ABM normal NLMS stepsize update" array_index="13" bit="14,14"                            check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob THD for ABM stepsize update when GCC only consider 0~2kHz" array_index="13" bit="15,15"  check_list="0,off,1,on"/>
+			<Field name="Low SNR detection THD for ABM VAD THD at WA" array_index="14" bit="4,11"                                 check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Normal power ratio THD for cal-data switch if only calibrate normal position" array_index="15" bit="0,15" check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="TMOS threshold for WA" array_index="16" bit="0,15"                                                       check_list="0,default(same as NB cal-data[1]),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="WA TMOS control" array_index="17" bit="0,0"                                                              check_list="0,off,1,on"/>
+
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2" array_index="20" bit="0,3"                                   check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic2 stationary noise tracking strength" array_index="20" bit="4,5"                                      check_list="0,suppress least,1,suppress less,2,suppress more,3,suppress most"/>
+			<Field name="Mic2 stationary noise tracking VAD threshold" array_index="20" bit="6,7"                                 check_list="0,suppress most,1,suppress more,2,suppress less,3,suppress least"/>
+			<Field name="Switch to Mic1 speed THD" array_index="20" bit="8,9"                                                     check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Switch to Mic2 speed THD" array_index="20" bit="10,11"                                                   check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2 TMOS" array_index="20" bit="12,13"                            check_list="0,off,1,3 dB,2,6 dB,3,9 dB"/>
+			<Field name="Mic2 direction VAD threshold" array_index="20" bit="14,15"                                               check_list="0,loosest,1,loose,2,strick,3,strickest"/>
+			<Field name="Reduce DMNR adaptive TX gain when mic2" array_index="21" bit="0,3"                                       check_list="0,0 dB,1,-1 dB,2,-2 dB,3,-3 dB,4,-4 dB,5,-5 dB,6,-6 dB,7,-7 dB,8,0 dB,9,1 dB,10,2 dB,11,3 dB,12,4 dB,13,5 dB,14,6 dB,15,7 dB"/>
+			<Field name="Mic siwtch algorithm 250~750Hz mic1/mic2 energy threshold" array_index="21" bit="4,5"                    check_list="0,-2 dB,1,-0.06 dB,2,-4 dB,3,-6 dB"/>
+			<Field name="prevent finger touch from selecting to mic1" array_index="21" bit="8,9"                                  check_list="0,off,1,-15 dB,2,-12 dB,3,-10 dB"/>
+			<Field name="Mic2 direction detection" array_index="21" bit="10,10"                                                   check_list="0,on,1,off"/>
+			<Field name="Mic switch algorithm delay control" array_index="21" bit="11,14"                                         check_list="0,10,1,11,2,12,3,13,4,14,5,15,6,16,7,17,8,18,9,19,10,20,11,21,12,22,13,23,14,24,15,25"/>
+			<Field name="Mic switch PD speed" array_index="21" bit="15,15"                                                        check_list="0,fast,1,slow"/>
+			<Field name="TMOS Detection THD in Mic2" array_index="22" bit="0,15"                                                  check_list="0,15000,1500,1500,3000,3000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="mic1/mic2 HB range" array_index="23" bit="0,0"                                                           check_list="0,2-4 kHz,1,1-3 kHz"/>
+			<Field name="Mic2 direction VAD enable" array_index="23" bit="1,1"                                                    check_list="0,off,1,on"/>
+			<Field name="Mic siwtch algorithm 0~250 Hz mic1/mic2 energy threshold" array_index="23" bit="2,3"                     check_list="0,-18 dB,1,-13 dB,2,-10 dB,3,off"/>
+			<Field name="DMNR ASLR in noisy signal control" array_index="23" bit="4,4"                                            check_list="0,off,1,on"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold1" array_index="23" bit="5,6"               check_list="0,-7.4 dB,1,-8.6 dB,2,-10.4 dB,3,off"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold2" array_index="23" bit="7,8"               check_list="0,-3.4 dB,1,-5.2 dB,2,-2.2 dB,3,-1.2 dB"/>
+			<Field name="Switch to mic1 speed THD" array_index="23" bit="9,10"                                                    check_list="0,450 ms,1,225 ms,2,300 ms,3,375 ms"/>
+			<Field name="WA Ctrl Switch for Mic2 Blocking" array_index="23" bit="11,11"                                           check_list="0,on,1,off"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic1" array_index="23" bit="12,15"                                 check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic siwtch algorithm HB 2k~4k Hz (if cal [23] bit 0 = 1 HB is 1k~3k)" array_index="24" bit="0,15"        check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/>
+			<Field name="Mic1 or Mic2 band 1 power thd for one-mic VAD" array_index="25" bit="0,15"                               check_list="0,default(1500 -64.5 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,2000, -63 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="Mic1 high band power threshold" array_index="26" bit="0,15"                                              check_list="0,default(2000 -63 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,1500, -64.5 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="FE VAD thd for mic switch" array_index="27" bit="0,15"                                                   check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<!--Field name="Mic2 HB thd for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="28" bit="0,15" check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB2 thd2 for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="29" bit="0,15" check_list="0,default(10000 -5 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,4096,-9 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB Abs Power thd for mic2 Blocking" array_index="30" bit="0,15" check_list="0,default(1500)"/-->
+			<!--Field name="Mic1 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="31" bit="0,15" check_list="0,default(5000)"/-->
+			<!--Field name="Mic2 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="32" bit="0,15" check_list="0,default(150)"/-->
+			<!--Field name="Mic2 LB2 Abs Power thd for mic2 Blocking (250~750 HZ (Band1))" array_index="33" bit="0,15" check_list="0,default(20000)"/-->
+			<!--Field name="Mic2 FB Abs Power thd for mic2 Blocking (0~8K HZ)" array_index="34" bit="0,15" check_list="0,default(10000)"/-->
+			<!--Field name="Stationary Noise Over-estimation for Mic2 Blocking" array_index="35" bit="0,2" check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/-->
+			<Field name="Mic2 band0 Power thrshold for mic Selection mic2 band 0 power threshold" array_index="36" bit="0,15"     check_list="0,default(7500 -39.5 dB),1000,-48.2 dB,3000,-43.5 dB,5000,-41.2 dB,10000,-38.2 dB,20000,-35.2 dB,30000,-33.5 dB"/>
+			<Field name="FE VAD thd for VCE" array_index="40" bit="0,15"                                                          check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<Field name="Noise type detection NB switch" array_index="0" bit="0,0"                                                check_list="0,off,1,on"/>
+			<Field name="Noise type detection WB switch" array_index="0" bit="1,1"                                                check_list="0,off,1,on"/>
+			<Field name="Noise type detection rejection THD" array_index="0" bit="9,10"                                           check_list="0,lowest,1,lower,2,stronger,3,strongest"/>
+			<Field name="Noise type detection detection confidence THD" array_index="0" bit="11,12"                               check_list="0,loosest,1,looser,2,stricter,3,strictest"/>
+			<Field name="Noise type detection detection speed" array_index="0" bit="13,14"                                        check_list="0,slowest,1,slower,2,faster,3,fastest"/>
+			<Field name="Noise type detection using default model" array_index="0" bit="15"                                       check_list="0,on,1,off"/>
+			<Field name="Noise type specialization enable at speechband(pub)" array_index="1" bit="0,0"                           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at speechband(pub)" array_index="1" bit="1,4"                   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at speechband(pub)" array_index="1" bit="5,8"                   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at speechband(pub)" array_index="1" bit="9,12"                check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at midband(road,corssroad,train)" array_index="2" bit="0,0"             check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at midband(road,corssroad,train)" array_index="2" bit="1,4"     check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at midband(road,corssroad,train)" array_index="2" bit="5,8"     check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at midband(road,corssroad,train)" array_index="2" bit="9,12"  check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at lowband(car)" array_index="3" bit="0,0"                              check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at lowband(car)" array_index="3" bit="1,4"                      check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at lowband(car)" array_index="3" bit="5,8"                      check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at lowband(car)" array_index="3" bit="9,12"                   check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="0,0"           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="1,4"   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="5,8"   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="9,12" check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+		</Param>
+		<Param name="dmnr_para_nb2" type="ushort_array">
+			<Field name="NC max band" array_index="0" bit="0,0"                                                                   check_list="0,0-8K,1,0-4K"/>
+			<Field name="ABM Taps" array_index="0" bit="1,1"                                                                      check_list="0,4taps,1,1tap"/>
+			<Field name="Initial Convergence" array_index="0" bit="2,2"                                                           check_list="0,off,1,on"/>
+			<Field name="VAD hysteresis" array_index="0" bit="3,3"                                                                check_list="0,on,1,off"/>
+			<Field name="Adaptive VAD hysteresis" array_index="0" bit="4,4"                                                       check_list="0,on,1,off"/>
+			<Field name="Strong nonstationary suppression" array_index="0" bit="5,5"                                              check_list="0,off,1,on"/>
+			<Field name="Less NS Gain" array_index="0" bit="6,8"                                                                  check_list="0,off,1,weakest,2,weaker,3,weak,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Dynamic NS LB in normal position" array_index="0" bit="9,10"                                             check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Wide-Angle" array_index="0" bit="11,12"                                                 check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Mic2" array_index="0" bit="13,14"                                                       check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Adaptive Noise Fast Converge" array_index="0" bit="15,15"                                                check_list="0,off,1,on"/>
+			<Field name="TMOS Detection THD in Mic1" array_index="1" bit="0,15"                                                   check_list="0,default(100),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="Normal Position Harmonic Reconstruction" array_index="2" bit="0,1"                                       check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Normal Position Pitch Protection" array_index="2" bit="2,2"                                              check_list="0,off,1,on"/>
+			<Field name="WA Position Harmonic Reconstruction" array_index="2" bit="3,4"                                           check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="WA Position Pitch Protection" array_index="2" bit="5,5"                                                  check_list="0,off,1,on"/>
+			<Field name="Mic2 Harmonic Reconstruction" array_index="2" bit="6,7"                                                  check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Mic2 Pitch Protection" array_index="2" bit="8,8"                                                         check_list="0,off,1,on"/>
+			<Field name="Noise Level detection for Harmonic Reconstruction" array_index="2" bit="9,10"                            check_list="0,off,1,apply HR only for high-SNR,2,apply HR only for medium-SNR,3,apply HR only for low-SNR"/>
+			<Field name="HR HB Skip" array_index="2" bit="11,11"                                                                  check_list="0,no control,1,skip 4k-8K"/>
+			<Field name="HR HB Nonlinear shaping" array_index="2" bit="12,12"                                                     check_list="0,off,1,on"/>
+			<Field name="NS Strong HB suppression" array_index="3" bit="0,0"                                                      check_list="0,off,1,on"/>
+			<Field name="NS Strong DC suppression" array_index="3" bit="1,2"                                                      check_list="0,off,1,93.75 Hz,2,156.25 Hz,3,250 Hz"/>
+			<Field name="Strong Suppression based on mic1 mic2 power difference information" array_index="3" bit="3,5"            check_list="0,weakest,1,weaker,2,weak,3,medium,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Noise underestimation when VAD on" array_index="3" bit="6,6"                                             check_list="0,off,1,on"/>
+			<Field name="Band 2 PD VAD" array_index="3" bit="7,7"                                                                 check_list="0,off,1,on"/>
+			<Field name="ABM update when mic2 blocking" array_index="3" bit="8,8"                                                 check_list="0,off,1,on"/>
+			<Field name="Stationary Noise Over-estimation for TMOS" array_index="3" bit="9,11"                                    check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/>
+			<Field name="ABM learning speed" array_index="3" bit="12,13"                                                          check_list="0,normal,1,fast,2,faster,3,very fast"/>
+			<Field name="ABM learn fast only in high SNR" array_index="3" bit="14,14"                                             check_list="0,bits 12~13 apply in all condition,1,bits 12~13 apply in high SNR condition(depends on NB cal-data[7])"/>
+			<Field name="Power Ratio Scaler Modifier" array_index="4" bit="0,15"                                                  check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="Switch or lower bound of MagiNRDual-NS Gain" array_index="5" bit="0,3"                                   check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Low SNR detection THD" array_index="5" bit="4,11"                                                        check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Band0p5 Power Ratio Scaler Modifier" array_index="6" bit="0,15"                                          check_list="0,default(WB normal Cal-data[40]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000)"/>
+			<Field name="Disable NC function threshold" array_index="7" bit="0,15"                                                check_list="0,default(600),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="SNRI Expander switch" array_index="8" bit="0"                                                            check_list="0,off,1,on"/>
+			<Field name="SNRI Expander Gain LB" array_index="8" bit="1,3"                                                         check_list="0,9 dB,1,12 dB,2,15 dB,3,18 dB,4,21 dB,5,24 dB,6,27 dB,7,30 dB"/>
+			<Field name="SNRI Expander Gain Under-estimation" array_index="8" bit="4"                                             check_list="0,6 dB,1,12 dB"/>
+			<Field name="SNRI Expander Triggered THD" array_index="8" bit="5,6"                                                   check_list="0,-30 dB(hardest),1,-28 dB,2,-26 dB,3,-24 dB(easiest)"/>
+
+			<Field name="Replace PR with PD VAD for cal-data switch" array_index="10" bit="0,0"                                   check_list="0,off,1,on"/>
+			<Field name="PR THD for cal-data switch" array_index="10" bit="1,2"                                                   check_list="0,1500,1,2500,2,3500,3,4000"/>
+			<Field name="WA switch VAD ONLY consider 1-mic VAD" array_index="10" bit="3,3"                                        check_list="0,off,1,on"/>
+			<Field name="Disable Well-cal VAD at WA" array_index="10" bit="4,4"                                                   check_list="0,off,1,on"/>
+			<Field name="Well-cal shadow VAD bias ctrl" array_index="10" bit="5,6"                                                check_list="0,300,1,600,2,1000,3,2000"/>
+			<Field name="Band1 SNR diff of cal-data as PD min" array_index="10" bit="7,7"                                         check_list="0,off,1,on"/>
+			<Field name="Disable PD VAD at WA" array_index="10" bit="8,8"                                                         check_list="0,off,1,on"/>
+			<Field name="Phone up or down cover range at WA" array_index="10" bit="9,12"                                          check_list="0,default(6dB),1,1dB(narrow),2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB(wide)"/>
+			<Field name="Fb stationary noise THD for high SNR for ENH_DMNR_VAD" array_index="10" bit="13,14"                      check_list="0,10000,1,15000,2,20000,3,30000"/>
+			<Field name="Consider Well-cal ABM PD VAD as ENH_DMNR_VAD" array_index="10" bit="15,15"                               check_list="0,off,1,on"/>
+			<Field name="ABM normal nlms stepsize under-estimate ratio" array_index="11" bit="0,1"                                check_list="0,32767(fast),1,16384,2,10922,3,8192(slow)"/>
+			<Field name="ABM shadow nlms stepsize" array_index="11" bit="2,3"                                                     check_list="0,5734(slow),1,9830,2,16384,3,22937(fast)"/>
+			<Field name="LB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="4,5"                                check_list="0,22000,1,16000,2,10000,3,8000"/>
+			<Field name="HB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="6,7"                                check_list="0,32750,1,32500,2,30000,3,25000"/>
+			<Field name="Disable NC at WA" array_index="11" bit="8,8"                                                             check_list="0,off,1,on"/>
+			<Field name="Start band of NC at WA" array_index="11" bit="9,10"                                                      check_list="0,off,1,1,2,2,3,3"/>
+			<Field name="End band of NC at WA" array_index="11" bit="11,12"                                                       check_list="0,off,1,12,2,9,3,6"/>
+			<Field name="Sb 1-mic vad THD for ABM normal stepsize at WA" array_index="11" bit="13,13"                             check_list="0,10000,1,16000"/>
+			<Field name="ABM shadow THD when cal-data switch" array_index="11" bit="14,15"                                        check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="Band range of GCC" array_index="12" bit="0,0"                                                            check_list="0,0~7,1,0~3"/>
+			<Field name="Rise rate for GCC PHAT" array_index="12" bit="1,2"                                                       check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Fall rate for GCC PHAT" array_index="12" bit="3,4"                                                       check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Band1 VAD on at WA" array_index="12" bit="5,5"                                                           check_list="0,off,1,on"/>
+			<Field name="GCC delay THD for ABM" array_index="12" bit="6,8"                                                        check_list="0,6,1,7,2,8,3,9,4,10,5,11,6,12,7,13"/>
+			<Field name="ABM VAD THD at normal if consider min of band1 + 2" array_index="12" bit="9,10"                          check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="AGC skip FE VAD" array_index="12" bit="11,11"                                                            check_list="0,on,1,off"/>
+			<Field name="Skip MCRA VAD for GCC updating" array_index="12" bit="12,12"                                             check_list="0,on,1,off"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="13,13"                                 check_list="0,off,1,on"/>
+			<Field name="Fix PD min at initial value" array_index="12" bit="14,14"                                                check_list="0,off,1,on"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="15,15"                                 check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob WA THD for ABM stepsize when high SNR at WA" array_index="13" bit="0,0"                  check_list="0,off,1,on"/>
+			<Field name="GCC prob THD for ABM stepsize when high SNR at WA" array_index="13" bit="1,2"                            check_list="0,500,1,1000,2,2000,3,3000"/>
+			<Field name="Consider SNR to adjust ABM VAD THD at WA" array_index="13" bit="3,3"                                     check_list="0,off,1,on"/>
+			<Field name="ABM VAD THD when high SNR at WA" array_index="13" bit="4,5"                                              check_list="0,6000,1,8000,2,10000,3,15000"/>
+			<Field name="ABM VAD THD when high SNR at normal if  consider band1 + 2" array_index="13" bit="6,7"                   check_list="0,10000,1,12000,2,16000,3,20000"/>
+			<Field name="GCC delay THD for ABM step size at WA" array_index="13" bit="8,11"                                       check_list="0,off,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15"/>
+			<Field name="ENH DMNR VAD skip consider high SNR VAD if FE VAD on at WA" array_index="13" bit="12,12"                 check_list="0,on,1,off"/>
+			<Field name="Skip FE VAD for ABM normal NLMS stepsize update" array_index="13" bit="14,14"                            check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob THD for ABM stepsize update when GCC only consider 0~2kHz" array_index="13" bit="15,15"  check_list="0,off,1,on"/>
+			<Field name="Low SNR detection THD for ABM VAD THD at WA" array_index="14" bit="4,11"                                 check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Normal power ratio THD for cal-data switch if only calibrate normal position" array_index="15" bit="0,15" check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="TMOS threshold for WA" array_index="16" bit="0,15"                                                       check_list="0,default(same as NB cal-data[1]),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="WA TMOS control" array_index="17" bit="0,0"                                                              check_list="0,off,1,on"/>
+
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2" array_index="20" bit="0,3"                                   check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic2 stationary noise tracking strength" array_index="20" bit="4,5"                                      check_list="0,suppress least,1,suppress less,2,suppress more,3,suppress most"/>
+			<Field name="Mic2 stationary noise tracking VAD threshold" array_index="20" bit="6,7"                                 check_list="0,suppress most,1,suppress more,2,suppress less,3,suppress least"/>
+			<Field name="Switch to Mic1 speed THD" array_index="20" bit="8,9"                                                     check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Switch to Mic2 speed THD" array_index="20" bit="10,11"                                                   check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2 TMOS" array_index="20" bit="12,13"                            check_list="0,off,1,3 dB,2,6 dB,3,9 dB"/>
+			<Field name="Mic2 direction VAD threshold" array_index="20" bit="14,15"                                               check_list="0,loosest,1,loose,2,strick,3,strickest"/>
+			<Field name="Reduce DMNR adaptive TX gain when mic2" array_index="21" bit="0,3"                                       check_list="0,0 dB,1,-1 dB,2,-2 dB,3,-3 dB,4,-4 dB,5,-5 dB,6,-6 dB,7,-7 dB,8,0 dB,9,1 dB,10,2 dB,11,3 dB,12,4 dB,13,5 dB,14,6 dB,15,7 dB"/>
+			<Field name="Mic siwtch algorithm 250~750Hz mic1/mic2 energy threshold" array_index="21" bit="4,5"                    check_list="0,-2 dB,1,-0.06 dB,2,-4 dB,3,-6 dB"/>
+			<Field name="prevent finger touch from selecting to mic1" array_index="21" bit="8,9"                                  check_list="0,off,1,-15 dB,2,-12 dB,3,-10 dB"/>
+			<Field name="Mic2 direction detection" array_index="21" bit="10,10"                                                   check_list="0,on,1,off"/>
+			<Field name="Mic switch algorithm delay control" array_index="21" bit="11,14"                                         check_list="0,10,1,11,2,12,3,13,4,14,5,15,6,16,7,17,8,18,9,19,10,20,11,21,12,22,13,23,14,24,15,25"/>
+			<Field name="Mic switch PD speed" array_index="21" bit="15,15"                                                        check_list="0,fast,1,slow"/>
+			<Field name="TMOS Detection THD in Mic2" array_index="22" bit="0,15"                                                  check_list="0,15000,1500,1500,3000,3000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="mic1/mic2 HB range" array_index="23" bit="0,0"                                                           check_list="0,2-4 kHz,1,1-3 kHz"/>
+			<Field name="Mic2 direction VAD enable" array_index="23" bit="1,1"                                                    check_list="0,off,1,on"/>
+			<Field name="Mic siwtch algorithm 0~250 Hz mic1/mic2 energy threshold" array_index="23" bit="2,3"                     check_list="0,-18 dB,1,-13 dB,2,-10 dB,3,off"/>
+			<Field name="DMNR ASLR in noisy signal control" array_index="23" bit="4,4"                                            check_list="0,off,1,on"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold1" array_index="23" bit="5,6"               check_list="0,-7.4 dB,1,-8.6 dB,2,-10.4 dB,3,off"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold2" array_index="23" bit="7,8"               check_list="0,-3.4 dB,1,-5.2 dB,2,-2.2 dB,3,-1.2 dB"/>
+			<Field name="Switch to mic1 speed THD" array_index="23" bit="9,10"                                                    check_list="0,450 ms,1,225 ms,2,300 ms,3,375 ms"/>
+			<Field name="WA Ctrl Switch for Mic2 Blocking" array_index="23" bit="11,11"                                           check_list="0,on,1,off"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic1" array_index="23" bit="12,15"                                 check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic siwtch algorithm HB 2k~4k Hz (if cal [23] bit 0 = 1 HB is 1k~3k)" array_index="24" bit="0,15"        check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/>
+			<Field name="Mic1 or Mic2 band 1 power thd for one-mic VAD" array_index="25" bit="0,15"                               check_list="0,default(1500 -64.5 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,2000, -63 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="Mic1 high band power threshold" array_index="26" bit="0,15"                                              check_list="0,default(2000 -63 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,1500, -64.5 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="FE VAD thd for mic switch" array_index="27" bit="0,15"                                                   check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<!--Field name="Mic2 HB thd for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="28" bit="0,15" check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB2 thd2 for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="29" bit="0,15" check_list="0,default(10000 -5 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,4096,-9 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB Abs Power thd for mic2 Blocking" array_index="30" bit="0,15" check_list="0,default(1500)"/-->
+			<!--Field name="Mic1 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="31" bit="0,15" check_list="0,default(5000)"/-->
+			<!--Field name="Mic2 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="32" bit="0,15" check_list="0,default(150)"/-->
+			<!--Field name="Mic2 LB2 Abs Power thd for mic2 Blocking (250~750 HZ (Band1))" array_index="33" bit="0,15" check_list="0,default(20000)"/-->
+			<!--Field name="Mic2 FB Abs Power thd for mic2 Blocking (0~8K HZ)" array_index="34" bit="0,15" check_list="0,default(10000)"/-->
+			<!--Field name="Stationary Noise Over-estimation for Mic2 Blocking" array_index="35" bit="0,2" check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/-->
+			<Field name="Mic2 band0 Power thrshold for mic Selection mic2 band 0 power threshold" array_index="36" bit="0,15"     check_list="0,default(7500 -39.5 dB),1000,-48.2 dB,3000,-43.5 dB,5000,-41.2 dB,10000,-38.2 dB,20000,-35.2 dB,30000,-33.5 dB"/>
+			<Field name="FE VAD thd for VCE" array_index="40" bit="0,15"                                                          check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<Field name="Noise type detection NB switch" array_index="0" bit="0,0"                                                check_list="0,off,1,on"/>
+			<Field name="Noise type detection WB switch" array_index="0" bit="1,1"                                                check_list="0,off,1,on"/>
+			<Field name="Noise type detection rejection THD" array_index="0" bit="9,10"                                           check_list="0,lowest,1,lower,2,stronger,3,strongest"/>
+			<Field name="Noise type detection detection confidence THD" array_index="0" bit="11,12"                               check_list="0,loosest,1,looser,2,stricter,3,strictest"/>
+			<Field name="Noise type detection detection speed" array_index="0" bit="13,14"                                        check_list="0,slowest,1,slower,2,faster,3,fastest"/>
+			<Field name="Noise type detection using default model" array_index="0" bit="15"                                       check_list="0,on,1,off"/>
+			<Field name="Noise type specialization enable at speechband(pub)" array_index="1" bit="0,0"                           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at speechband(pub)" array_index="1" bit="1,4"                   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at speechband(pub)" array_index="1" bit="5,8"                   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at speechband(pub)" array_index="1" bit="9,12"                check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at midband(road,corssroad,train)" array_index="2" bit="0,0"             check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at midband(road,corssroad,train)" array_index="2" bit="1,4"     check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at midband(road,corssroad,train)" array_index="2" bit="5,8"     check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at midband(road,corssroad,train)" array_index="2" bit="9,12"  check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at lowband(car)" array_index="3" bit="0,0"                              check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at lowband(car)" array_index="3" bit="1,4"                      check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at lowband(car)" array_index="3" bit="5,8"                      check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at lowband(car)" array_index="3" bit="9,12"                   check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="0,0"           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="1,4"   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="5,8"   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="9,12" check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+		</Param>
+		<Param name="dmnr_para_wb2" type="ushort_array">
+			<Field name="NC max band" array_index="0" bit="0,0"                                                            check_list="0,0-8K,1,0-4K"/>
+			<Field name="ABM Taps" array_index="0" bit="1,1"                                                               check_list="0,4taps,1,1tap"/>
+			<Field name="Initial Convergence" array_index="0" bit="2,2"                                                    check_list="0,off,1,on"/>
+			<Field name="VAD hysteresis" array_index="0" bit="3,3"                                                         check_list="0,on,1,off"/>
+			<Field name="Adaptive VAD hysteresis" array_index="0" bit="4,4"                                                check_list="0,on,1,off"/>
+			<Field name="Strong nonstationary suppression" array_index="0" bit="5,5"                                       check_list="0,off,1,on"/>
+			<Field name="Less NS Gain" array_index="0" bit="6,8"                                                           check_list="0,off,1,weakest,2,weaker,3,weak,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Dynamic NS LB in normal position" array_index="0" bit="9,10"                                      check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Wide-Angle" array_index="0" bit="11,12"                                          check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Mic2" array_index="0" bit="13,14"                                                check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Adaptive Noise Fast Converge" array_index="0" bit="15,15"                                         check_list="0,off,1,on"/>
+			<Field name="TMOS Detection THD in Mic1" array_index="1" bit="0,15"                                            check_list="0,default(100),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="Normal Position Harmonic Reconstruction" array_index="2" bit="0,1"                                check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Normal Position Pitch Protection" array_index="2" bit="2,2"                                       check_list="0,off,1,on"/>
+			<Field name="WA Position Harmonic Reconstruction" array_index="2" bit="3,4"                                    check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="WA Position Pitch Protection" array_index="2" bit="5,5"                                           check_list="0,off,1,on"/>
+			<Field name="Mic2 Harmonic Reconstruction" array_index="2" bit="6,7"                                           check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Mic2 Pitch Protection" array_index="2" bit="8,8"                                                  check_list="0,off,1,on"/>
+			<Field name="Noise Level detection for Harmonic Reconstruction" array_index="2" bit="9,10"                     check_list="0,off,1,apply HR only for high-SNR,2,apply HR only for medium-SNR,3,apply HR only for low-SNR"/>
+			<Field name="HR HB Skip" array_index="2" bit="11,11"                                                           check_list="0,no control,1,skip 4k-8K"/>
+			<Field name="HR HB Nonlinear shaping" array_index="2" bit="12,12"                                              check_list="0,off,1,on"/>
+			<Field name="NS Strong HB suppression" array_index="3" bit="0,0"                                               check_list="0,off,1,on"/>
+			<Field name="NS Strong DC suppression" array_index="3" bit="1,2"                                               check_list="0,off,1,93.75 Hz,2,156.25 Hz,3,250 Hz"/>
+			<Field name="Strong Suppression based on mic1 mic2 power difference information" array_index="3" bit="3,5"     check_list="0,weakest,1,weaker,2,weak,3,medium,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Noise underestimation when VAD on" array_index="3" bit="6,6"                                      check_list="0,off,1,on"/>
+			<Field name="Band 2 PD VAD" array_index="3" bit="7,7"                                                          check_list="0,off,1,on"/>
+			<Field name="ABM update when mic2 blocking" array_index="3" bit="8,8"                                          check_list="0,off,1,on"/>
+			<Field name="Stationary Noise Over-estimation for TMOS" array_index="3" bit="9,11"                             check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/>
+			<Field name="ABM learning speed" array_index="3" bit="12,13"                                                   check_list="0,normal,1,fast,2,faster,3,very fast"/>
+			<Field name="ABM learn fast only in high SNR" array_index="3" bit="14,14"                                      check_list="0,bits 12~13 apply in all condition,1,bits 12~13 apply in high SNR condition(depends on NB cal-data[7])"/>
+			<Field name="Power Ratio Scaler Modifier" array_index="4" bit="0,15"                                           check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="Switch or lower bound of MagiNRDual-NS Gain" array_index="5" bit="0,3"                            check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Low SNR detection THD" array_index="5" bit="4,11"                                                 check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Band0p5 Power Ratio Scaler Modifier" array_index="6" bit="0,15"                                   check_list="0,default(WB normal Cal-data[40]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000)"/>
+			<Field name="Disable NC function threshold" array_index="7" bit="0,15"                                         check_list="0,default(600),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="SNRI Expander switch" array_index="8" bit="0"                                                     check_list="0,off,1,on"/>
+			<Field name="SNRI Expander Gain LB" array_index="8" bit="1,3"                                                  check_list="0,9 dB,1,12 dB,2,15 dB,3,18 dB,4,21 dB,5,24 dB,6,27 dB,7,30 dB"/>
+			<Field name="SNRI Expander Gain Under-estimation" array_index="8" bit="4"                                      check_list="0,6 dB,1,12 dB"/>
+			<Field name="SNRI Expander Triggered THD" array_index="8" bit="5,6"                                            check_list="0,-30 dB(hardest),1,-28 dB,2,-26 dB,3,-24 dB(easiest)"/>
+
+			<Field name="Replace PR with PD VAD for cal-data switch" array_index="10" bit="0,0"                            check_list="0,off,1,on"/>
+			<Field name="PR THD for cal-data switch" array_index="10" bit="1,2"                                            check_list="0,1500,1,2500,2,3500,3,4000"/>
+			<Field name="WA switch VAD ONLY consider 1-mic VAD" array_index="10" bit="3,3"                                 check_list="0,off,1,on"/>
+			<Field name="Disable Well-cal VAD at WA" array_index="10" bit="4,4"                                            check_list="0,off,1,on"/>
+			<Field name="Well-cal shadow VAD bias ctrl" array_index="10" bit="5,6"                                         check_list="0,300,1,600,2,1000,3,2000"/>
+			<Field name="Band1 SNR diff of cal-data as PD min" array_index="10" bit="7,7"                                  check_list="0,off,1,on"/>
+			<Field name="Disable PD VAD at WA" array_index="10" bit="8,8"                                                  check_list="0,off,1,on"/>
+			<Field name="Phone up or down cover range at WA" array_index="10" bit="9,12"                                   check_list="0,default(6dB),1,1dB(narrow),2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB(wide)"/>
+			<Field name="Fb stationary noise THD for high SNR for ENH_DMNR_VAD" array_index="10" bit="13,14"               check_list="0,10000,1,15000,2,20000,3,30000"/>
+			<Field name="Consider Well-cal ABM PD VAD as ENH_DMNR_VAD" array_index="10" bit="15,15"                        check_list="0,off,1,on"/>
+			<Field name="ABM normal nlms stepsize under-estimate ratio" array_index="11" bit="0,1"                         check_list="0,32767(fast),1,16384,2,10922,3,8192(slow)"/>
+			<Field name="ABM shadow nlms stepsize" array_index="11" bit="2,3"                                              check_list="0,5734(slow),1,9830,2,16384,3,22937(fast)"/>
+			<Field name="LB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="4,5"                         check_list="0,22000,1,16000,2,10000,3,8000"/>
+			<Field name="HB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="6,7"                         check_list="0,32750,1,32500,2,30000,3,25000"/>
+			<Field name="Disable NC at WA" array_index="11" bit="8,8"                                                      check_list="0,off,1,on"/>
+			<Field name="Start band of NC at WA" array_index="11" bit="9,10"                                               check_list="0,off,1,1,2,2,3,3"/>
+			<Field name="End band of NC at WA" array_index="11" bit="11,12"                                                check_list="0,off,1,12,2,9,3,6"/>
+			<Field name="Sb 1-mic vad THD for ABM normal stepsize at WA" array_index="11" bit="13,13"                      check_list="0,10000,1,16000"/>
+			<Field name="ABM shadow THD when cal-data switch" array_index="11" bit="14,15"                                 check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="Band range of GCC" array_index="12" bit="0,0"                                                     check_list="0,0~7,1,0~3"/>
+			<Field name="Rise rate for GCC PHAT" array_index="12" bit="1,2"                                                check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Fall rate for GCC PHAT" array_index="12" bit="3,4"                                                check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Band1 VAD on at WA" array_index="12" bit="5,5"                                                    check_list="0,off,1,on"/>
+			<Field name="GCC delay THD for ABM" array_index="12" bit="6,8"                                                 check_list="0,6,1,7,2,8,3,9,4,10,5,11,6,12,7,13"/>
+			<Field name="ABM VAD THD at normal if consider min of band1 + 2" array_index="12" bit="9,10"                   check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="AGC skip FE VAD" array_index="12" bit="11,11"                                                     check_list="0,on,1,off"/>
+			<Field name="Skip MCRA VAD for GCC updating" array_index="12" bit="12,12"                                      check_list="0,on,1,off"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="13,13"                          check_list="0,off,1,on"/>
+			<Field name="Fix PD min at initial value" array_index="12" bit="14,14"                                         check_list="0,off,1,on"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="15,15"                          check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob WA THD for ABM stepsize when high SNR at WA" array_index="13" bit="0,0"           check_list="0,off,1,on"/>
+			<Field name="GCC prob THD for ABM stepsize when high SNR at WA" array_index="13" bit="1,2"                     check_list="0,500,1,1000,2,2000,3,3000"/>
+			<Field name="Consider SNR to adjust ABM VAD THD at WA" array_index="13" bit="3,3"                              check_list="0,off,1,on"/>
+			<Field name="ABM VAD THD when high SNR at WA" array_index="13" bit="4,5"                                       check_list="0,6000,1,8000,2,10000,3,15000"/>
+			<Field name="ABM VAD THD when high SNR at normal if  consider band1 + 2" array_index="13" bit="6,7"            check_list="0,10000,1,12000,2,16000,3,20000"/>
+			<Field name="GCC delay THD for ABM step size at WA" array_index="13" bit="8,11"                                check_list="0,off,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15"/>
+			<Field name="ENH DMNR VAD skip consider high SNR VAD if FE VAD on at WA" array_index="13" bit="12,12"          check_list="0,on,1,off"/>
+			<Field name="Skip FE VAD for ABM normal NLMS stepsize update" array_index="13" bit="14,14"                     check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob THD for ABM stepsize update when GCC only consider 0~2kHz" array_index="13" bit="15,15"              check_list="0,off,1,on"/>
+			<Field name="Low SNR detection THD for ABM VAD THD at WA" array_index="14" bit="4,11"                                             check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Normal power ratio THD for cal-data switch if only calibrate normal position" array_index="15" bit="0,15"            check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="TMOS threshold for WA" array_index="16" bit="0,15"                                                                   check_list="0,default(same as NB cal-data[1]),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="WA TMOS control" array_index="17" bit="0,0"                                                                          check_list="0,off,1,on"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2" array_index="20" bit="0,3"                                               check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic2 stationary noise tracking strength" array_index="20" bit="4,5"                                                  check_list="0,suppress least,1,suppress less,2,suppress more,3,suppress most"/>
+			<Field name="Mic2 stationary noise tracking VAD threshold" array_index="20" bit="6,7"                                             check_list="0,suppress most,1,suppress more,2,suppress less,3,suppress least"/>
+			<Field name="Switch to Mic1 speed THD" array_index="20" bit="8,9"                                                                 check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Switch to Mic2 speed THD" array_index="20" bit="10,11"                                                               check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2 TMOS" array_index="20" bit="12,13"                                        check_list="0,off,1,3 dB,2,6 dB,3,9 dB"/>
+			<Field name="Mic2 direction VAD threshold" array_index="20" bit="14,15"                                                           check_list="0,loosest,1,loose,2,strick,3,strickest"/>
+			<Field name="Reduce DMNR adaptive TX gain when mic2" array_index="21" bit="0,3"                                                   check_list="0,0 dB,1,-1 dB,2,-2 dB,3,-3 dB,4,-4 dB,5,-5 dB,6,-6 dB,7,-7 dB,8,0 dB,9,1 dB,10,2 dB,11,3 dB,12,4 dB,13,5 dB,14,6 dB,15,7 dB"/>
+			<Field name="Mic siwtch algorithm 250~750Hz mic1/mic2 energy threshold" array_index="21" bit="4,5"                                check_list="0,-2 dB,1,-0.06 dB,2,-4 dB,3,-6 dB"/>
+			<Field name="prevent finger touch from selecting to mic1" array_index="21" bit="8,9"                                              check_list="0,off,1,-15 dB,2,-12 dB,3,-10 dB"/>
+			<Field name="Mic2 direction detection" array_index="21" bit="10,10"                                                               check_list="0,on,1,off"/>
+			<Field name="Mic switch algorithm delay control" array_index="21" bit="11,14"                                                     check_list="0,10,1,11,2,12,3,13,4,14,5,15,6,16,7,17,8,18,9,19,10,20,11,21,12,22,13,23,14,24,15,25"/>
+			<Field name="Mic switch PD speed" array_index="21" bit="15,15"                                                                    check_list="0,fast,1,slow"/>
+			<Field name="TMOS Detection THD in Mic2" array_index="22" bit="0,15"                                                              check_list="0,15000,1500,1500,3000,3000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="mic1/mic2 HB range" array_index="23" bit="0,0"                                                                       check_list="0,2-4 kHz,1,1-3 kHz"/>
+			<Field name="Mic2 direction VAD enable" array_index="23" bit="1,1"                                                                check_list="0,off,1,on"/>
+			<Field name="Mic siwtch algorithm 0~250 Hz mic1/mic2 energy threshold" array_index="23" bit="2,3"                                 check_list="0,-18 dB,1,-13 dB,2,-10 dB,3,off"/>
+			<Field name="DMNR ASLR in noisy signal control" array_index="23" bit="4,4"                                                        check_list="0,off,1,on"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold1" array_index="23" bit="5,6"                           check_list="0,-7.4 dB,1,-8.6 dB,2,-10.4 dB,3,off"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold2" array_index="23" bit="7,8"                           check_list="0,-3.4 dB,1,-5.2 dB,2,-2.2 dB,3,-1.2 dB"/>
+			<Field name="Switch to mic1 speed THD" array_index="23" bit="9,10"                                                                check_list="0,450 ms,1,225 ms,2,300 ms,3,375 ms"/>
+			<Field name="WA Ctrl Switch for Mic2 Blocking" array_index="23" bit="11,11"                                                       check_list="0,on,1,off"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic1" array_index="23" bit="12,15"                                             check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic siwtch algorithm HB 2k~4k Hz (if cal [23] bit 0 = 1 HB is 1k~3k)" array_index="24" bit="0,15"                    check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/>
+			<Field name="Mic1 or Mic2 band 1 power thd for one-mic VAD" array_index="25" bit="0,15"                                           check_list="0,default(1500 -64.5 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,2000, -63 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="Mic1 high band power threshold" array_index="26" bit="0,15"                                                          check_list="0,default(2000 -63 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,1500, -64.5 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="FE VAD thd for mic switch" array_index="27" bit="0,15"                                                               check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<!--Field name="Mic2 HB thd for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="28" bit="0,15" check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB2 thd2 for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="29" bit="0,15" check_list="0,default(10000 -5 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,4096,-9 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB Abs Power thd for mic2 Blocking" array_index="30" bit="0,15" check_list="0,default(1500)"/-->
+			<!--Field name="Mic1 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="31" bit="0,15" check_list="0,default(5000)"/-->
+			<!--Field name="Mic2 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="32" bit="0,15" check_list="0,default(150)"/-->
+			<!--Field name="Mic2 LB2 Abs Power thd for mic2 Blocking (250~750 HZ (Band1))" array_index="33" bit="0,15" check_list="0,default(20000)"/-->
+			<!--Field name="Mic2 FB Abs Power thd for mic2 Blocking (0~8K HZ)" array_index="34" bit="0,15" check_list="0,default(10000)"/-->
+			<!--Field name="Stationary Noise Over-estimation for Mic2 Blocking" array_index="35" bit="0,2" check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/-->
+			<Field name="Mic2 band0 Power thrshold for mic Selection mic2 band 0 power threshold" array_index="36" bit="0,15"                 check_list="0,default(7500 -39.5 dB),1000,-48.2 dB,3000,-43.5 dB,5000,-41.2 dB,10000,-38.2 dB,20000,-35.2 dB,30000,-33.5 dB"/>
+			<Field name="FE VAD thd for VCE" array_index="40" bit="0,15"                                                                      check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<Field name="Noise type detection NB switch" array_index="0" bit="0,0"                                                            check_list="0,off,1,on"/>
+			<Field name="Noise type detection WB switch" array_index="0" bit="1,1"                                                            check_list="0,off,1,on"/>
+			<Field name="Noise type detection rejection THD" array_index="0" bit="9,10"                                                       check_list="0,lowest,1,lower,2,stronger,3,strongest"/>
+			<Field name="Noise type detection detection confidence THD" array_index="0" bit="11,12"                                           check_list="0,loosest,1,looser,2,stricter,3,strictest"/>
+			<Field name="Noise type detection detection speed" array_index="0" bit="13,14"                                                    check_list="0,slowest,1,slower,2,faster,3,fastest"/>
+			<Field name="Noise type detection using default model" array_index="0" bit="15"                                                   check_list="0,on,1,off"/>
+			<Field name="Noise type specialization enable at speechband(pub)" array_index="1" bit="0,0"                                       check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at speechband(pub)" array_index="1" bit="1,4"                               check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at speechband(pub)" array_index="1" bit="5,8"                               check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at speechband(pub)" array_index="1" bit="9,12"                            check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at midband(road,corssroad,train)" array_index="2" bit="0,0"                         check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at midband(road,corssroad,train)" array_index="2" bit="1,4"                 check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at midband(road,corssroad,train)" array_index="2" bit="5,8"                 check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at midband(road,corssroad,train)" array_index="2" bit="9,12"              check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at lowband(car)" array_index="3" bit="0,0"                                          check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at lowband(car)" array_index="3" bit="1,4"                                  check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at lowband(car)" array_index="3" bit="5,8"                                  check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at lowband(car)" array_index="3" bit="9,12"                               check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="0,0"                       check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="1,4"               check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="5,8"               check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="9,12"            check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+		</Param>
+		<Param name="dmnr_para_swb1" type="ushort_array">
+			<Field name="NC max band" array_index="0" bit="0,0"                                                                               check_list="0,0-8K,1,0-4K"/>
+			<Field name="ABM Taps" array_index="0" bit="1,1"                                                                                  check_list="0,4taps,1,1tap"/>
+			<Field name="Initial Convergence" array_index="0" bit="2,2"                                                                       check_list="0,off,1,on"/>
+			<Field name="VAD hysteresis" array_index="0" bit="3,3"                                                                            check_list="0,on,1,off"/>
+			<Field name="Adaptive VAD hysteresis" array_index="0" bit="4,4"                                                                   check_list="0,on,1,off"/>
+			<Field name="Strong nonstationary suppression" array_index="0" bit="5,5"                                                          check_list="0,off,1,on"/>
+			<Field name="Less NS Gain" array_index="0" bit="6,8"                                                                              check_list="0,off,1,weakest,2,weaker,3,weak,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Dynamic NS LB in normal position" array_index="0" bit="9,10"                                                         check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Wide-Angle" array_index="0" bit="11,12"                                                             check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Mic2" array_index="0" bit="13,14"                                                                   check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Adaptive Noise Fast Converge" array_index="0" bit="15,15"                                                            check_list="0,off,1,on"/>
+			<Field name="TMOS Detection THD in Mic1" array_index="1" bit="0,15"                                                               check_list="0,default(100),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="Normal Position Harmonic Reconstruction" array_index="2" bit="0,1"                                                   check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Normal Position Pitch Protection" array_index="2" bit="2,2"                                                          check_list="0,off,1,on"/>
+			<Field name="WA Position Harmonic Reconstruction" array_index="2" bit="3,4"                                                       check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="WA Position Pitch Protection" array_index="2" bit="5,5"                                                              check_list="0,off,1,on"/>
+			<Field name="Mic2 Harmonic Reconstruction" array_index="2" bit="6,7"                                                              check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Mic2 Pitch Protection" array_index="2" bit="8,8"                                                                     check_list="0,off,1,on"/>
+			<Field name="Noise Level detection for Harmonic Reconstruction" array_index="2" bit="9,10"                                        check_list="0,off,1,apply HR only for high-SNR,2,apply HR only for medium-SNR,3,apply HR only for low-SNR"/>
+			<Field name="HR HB Skip" array_index="2" bit="11,11"                                                                              check_list="0,no control,1,skip 4k-8K"/>
+			<Field name="HR HB Nonlinear shaping" array_index="2" bit="12,12"                                                                 check_list="0,off,1,on"/>
+			<Field name="NS Strong HB suppression" array_index="3" bit="0,0"                                                                  check_list="0,off,1,on"/>
+			<Field name="NS Strong DC suppression" array_index="3" bit="1,2"                                                                  check_list="0,off,1,93.75 Hz,2,156.25 Hz,3,250 Hz"/>
+			<Field name="Strong Suppression based on mic1 mic2 power difference information" array_index="3" bit="3,5"                        check_list="0,weakest,1,weaker,2,weak,3,medium,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Noise underestimation when VAD on" array_index="3" bit="6,6"                                                         check_list="0,off,1,on"/>
+			<Field name="Band 2 PD VAD" array_index="3" bit="7,7"                                                                             check_list="0,off,1,on"/>
+			<Field name="ABM update when mic2 blocking" array_index="3" bit="8,8"                                                             check_list="0,off,1,on"/>
+			<Field name="Stationary Noise Over-estimation for TMOS" array_index="3" bit="9,11"                                                check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/>
+			<Field name="ABM learning speed" array_index="3" bit="12,13"                                                                      check_list="0,normal,1,fast,2,faster,3,very fast"/>
+			<Field name="ABM learn fast only in high SNR" array_index="3" bit="14,14"                                                         check_list="0,bits 12~13 apply in all condition,1,bits 12~13 apply in high SNR condition(depends on NB cal-data[7])"/>
+			<Field name="Power Ratio Scaler Modifier" array_index="4" bit="0,15"                                                              check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="Switch or lower bound of MagiNRDual-NS Gain" array_index="5" bit="0,3"                                               check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Low SNR detection THD" array_index="5" bit="4,11"                                                                    check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Band0p5 Power Ratio Scaler Modifier" array_index="6" bit="0,15"                                                      check_list="0,default(WB normal Cal-data[40]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000)"/>
+			<Field name="Disable NC function threshold" array_index="7" bit="0,15"                                                            check_list="0,default(600),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="SNRI Expander switch" array_index="8" bit="0"                                                                        check_list="0,off,1,on"/>
+			<Field name="SNRI Expander Gain LB" array_index="8" bit="1,3"                                                                     check_list="0,9 dB,1,12 dB,2,15 dB,3,18 dB,4,21 dB,5,24 dB,6,27 dB,7,30 dB"/>
+			<Field name="SNRI Expander Gain Under-estimation" array_index="8" bit="4"                                                         check_list="0,6 dB,1,12 dB"/>
+			<Field name="SNRI Expander Triggered THD" array_index="8" bit="5,6"                                                               check_list="0,-30 dB(hardest),1,-28 dB,2,-26 dB,3,-24 dB(easiest)"/>
+
+			<Field name="Replace PR with PD VAD for cal-data switch" array_index="10" bit="0,0"                                               check_list="0,off,1,on"/>
+			<Field name="PR THD for cal-data switch" array_index="10" bit="1,2"                                                               check_list="0,1500,1,2500,2,3500,3,4000"/>
+			<Field name="WA switch VAD ONLY consider 1-mic VAD" array_index="10" bit="3,3"                                                    check_list="0,off,1,on"/>
+			<Field name="Disable Well-cal VAD at WA" array_index="10" bit="4,4"                                                               check_list="0,off,1,on"/>
+			<Field name="Well-cal shadow VAD bias ctrl" array_index="10" bit="5,6"                                                            check_list="0,300,1,600,2,1000,3,2000"/>
+			<Field name="Band1 SNR diff of cal-data as PD min" array_index="10" bit="7,7"                                                     check_list="0,off,1,on"/>
+			<Field name="Disable PD VAD at WA" array_index="10" bit="8,8"                                                                     check_list="0,off,1,on"/>
+			<Field name="Phone up or down cover range at WA" array_index="10" bit="9,12"                                                      check_list="0,default(6dB),1,1dB(narrow),2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB(wide)"/>
+			<Field name="Fb stationary noise THD for high SNR for ENH_DMNR_VAD" array_index="10" bit="13,14"                                  check_list="0,10000,1,15000,2,20000,3,30000"/>
+			<Field name="Consider Well-cal ABM PD VAD as ENH_DMNR_VAD" array_index="10" bit="15,15"                                           check_list="0,off,1,on"/>
+			<Field name="ABM normal nlms stepsize under-estimate ratio" array_index="11" bit="0,1"                                            check_list="0,32767(fast),1,16384,2,10922,3,8192(slow)"/>
+			<Field name="ABM shadow nlms stepsize" array_index="11" bit="2,3"                                                                 check_list="0,5734(slow),1,9830,2,16384,3,22937(fast)"/>
+			<Field name="LB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="4,5"                                            check_list="0,22000,1,16000,2,10000,3,8000"/>
+			<Field name="HB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="6,7"                                            check_list="0,32750,1,32500,2,30000,3,25000"/>
+			<Field name="Disable NC at WA" array_index="11" bit="8,8"                                                                         check_list="0,off,1,on"/>
+			<Field name="Start band of NC at WA" array_index="11" bit="9,10"                                                                  check_list="0,off,1,1,2,2,3,3"/>
+			<Field name="End band of NC at WA" array_index="11" bit="11,12"                                                                   check_list="0,off,1,12,2,9,3,6"/>
+			<Field name="Sb 1-mic vad THD for ABM normal stepsize at WA" array_index="11" bit="13,13"                                         check_list="0,10000,1,16000"/>
+			<Field name="ABM shadow THD when cal-data switch" array_index="11" bit="14,15"                                                    check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="Band range of GCC" array_index="12" bit="0,0"                                                                        check_list="0,0~7,1,0~3"/>
+			<Field name="Rise rate for GCC PHAT" array_index="12" bit="1,2"                                                                   check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Fall rate for GCC PHAT" array_index="12" bit="3,4"                                                                   check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Band1 VAD on at WA" array_index="12" bit="5,5"                                                                       check_list="0,off,1,on"/>
+			<Field name="GCC delay THD for ABM" array_index="12" bit="6,8"                                                                    check_list="0,6,1,7,2,8,3,9,4,10,5,11,6,12,7,13"/>
+			<Field name="ABM VAD THD at normal if consider min of band1 + 2" array_index="12" bit="9,10"                                      check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="AGC skip FE VAD" array_index="12" bit="11,11"                                                                        check_list="0,on,1,off"/>
+			<Field name="Skip MCRA VAD for GCC updating" array_index="12" bit="12,12"                                                         check_list="0,on,1,off"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="13,13"                                             check_list="0,off,1,on"/>
+			<Field name="Fix PD min at initial value" array_index="12" bit="14,14"                                                            check_list="0,off,1,on"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="15,15"                                             check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob WA THD for ABM stepsize when high SNR at WA" array_index="13" bit="0,0"                              check_list="0,off,1,on"/>
+			<Field name="GCC prob THD for ABM stepsize when high SNR at WA" array_index="13" bit="1,2"                                        check_list="0,500,1,1000,2,2000,3,3000"/>
+			<Field name="Consider SNR to adjust ABM VAD THD at WA" array_index="13" bit="3,3"                                                 check_list="0,off,1,on"/>
+			<Field name="ABM VAD THD when high SNR at WA" array_index="13" bit="4,5"                                                          check_list="0,6000,1,8000,2,10000,3,15000"/>
+			<Field name="ABM VAD THD when high SNR at normal if  consider band1 + 2" array_index="13" bit="6,7"                               check_list="0,10000,1,12000,2,16000,3,20000"/>
+			<Field name="GCC delay THD for ABM step size at WA" array_index="13" bit="8,11"                                                   check_list="0,off,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15"/>
+			<Field name="ENH DMNR VAD skip consider high SNR VAD if FE VAD on at WA" array_index="13" bit="12,12"                             check_list="0,on,1,off"/>
+			<Field name="Skip FE VAD for ABM normal NLMS stepsize update" array_index="13" bit="14,14"                                        check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob THD for ABM stepsize update when GCC only consider 0~2kHz" array_index="13" bit="15,15"              check_list="0,off,1,on"/>
+			<Field name="Low SNR detection THD for ABM VAD THD at WA" array_index="14" bit="4,11"                                             check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Normal power ratio THD for cal-data switch if only calibrate normal position" array_index="15" bit="0,15"            check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="TMOS threshold for WA" array_index="16" bit="0,15"                                                                   check_list="0,default(same as NB cal-data[1]),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="WA TMOS control" array_index="17" bit="0,0"                                                                          check_list="0,off,1,on"/>
+
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2" array_index="20" bit="0,3"                                               check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic2 stationary noise tracking strength" array_index="20" bit="4,5"                                                  check_list="0,suppress least,1,suppress less,2,suppress more,3,suppress most"/>
+			<Field name="Mic2 stationary noise tracking VAD threshold" array_index="20" bit="6,7"                                             check_list="0,suppress most,1,suppress more,2,suppress less,3,suppress least"/>
+			<Field name="Switch to Mic1 speed THD" array_index="20" bit="8,9"                                                                 check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Switch to Mic2 speed THD" array_index="20" bit="10,11"                                                               check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2 TMOS" array_index="20" bit="12,13"                                        check_list="0,off,1,3 dB,2,6 dB,3,9 dB"/>
+			<Field name="Mic2 direction VAD threshold" array_index="20" bit="14,15"                                                           check_list="0,loosest,1,loose,2,strick,3,strickest"/>
+			<Field name="Reduce DMNR adaptive TX gain when mic2" array_index="21" bit="0,3"                                                   check_list="0,0 dB,1,-1 dB,2,-2 dB,3,-3 dB,4,-4 dB,5,-5 dB,6,-6 dB,7,-7 dB,8,0 dB,9,1 dB,10,2 dB,11,3 dB,12,4 dB,13,5 dB,14,6 dB,15,7 dB"/>
+			<Field name="Mic siwtch algorithm 250~750Hz mic1/mic2 energy threshold" array_index="21" bit="4,5"                                check_list="0,-2 dB,1,-0.06 dB,2,-4 dB,3,-6 dB"/>
+			<Field name="prevent finger touch from selecting to mic1" array_index="21" bit="8,9"                                              check_list="0,off,1,-15 dB,2,-12 dB,3,-10 dB"/>
+			<Field name="Mic2 direction detection" array_index="21" bit="10,10"                                                               check_list="0,on,1,off"/>
+			<Field name="Mic switch algorithm delay control" array_index="21" bit="11,14"                                                     check_list="0,10,1,11,2,12,3,13,4,14,5,15,6,16,7,17,8,18,9,19,10,20,11,21,12,22,13,23,14,24,15,25"/>
+			<Field name="Mic switch PD speed" array_index="21" bit="15,15"                                                                    check_list="0,fast,1,slow"/>
+			<Field name="TMOS Detection THD in Mic2" array_index="22" bit="0,15"                                                              check_list="0,15000,1500,1500,3000,3000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="mic1/mic2 HB range" array_index="23" bit="0,0"                                                                       check_list="0,2-4 kHz,1,1-3 kHz"/>
+			<Field name="Mic2 direction VAD enable" array_index="23" bit="1,1"                                                                check_list="0,off,1,on"/>
+			<Field name="Mic siwtch algorithm 0~250 Hz mic1/mic2 energy threshold" array_index="23" bit="2,3"                                 check_list="0,-18 dB,1,-13 dB,2,-10 dB,3,off"/>
+			<Field name="DMNR ASLR in noisy signal control" array_index="23" bit="4,4"                                                        check_list="0,off,1,on"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold1" array_index="23" bit="5,6"                           check_list="0,-7.4 dB,1,-8.6 dB,2,-10.4 dB,3,off"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold2" array_index="23" bit="7,8"                           check_list="0,-3.4 dB,1,-5.2 dB,2,-2.2 dB,3,-1.2 dB"/>
+			<Field name="Switch to mic1 speed THD" array_index="23" bit="9,10"                                                                check_list="0,450 ms,1,225 ms,2,300 ms,3,375 ms"/>
+			<Field name="WA Ctrl Switch for Mic2 Blocking" array_index="23" bit="11,11"                                                       check_list="0,on,1,off"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic1" array_index="23" bit="12,15"                                             check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic siwtch algorithm HB 2k~4k Hz (if cal [23] bit 0 = 1 HB is 1k~3k)" array_index="24" bit="0,15"                    check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/>
+			<Field name="Mic1 or Mic2 band 1 power thd for one-mic VAD" array_index="25" bit="0,15"                                           check_list="0,default(1500 -64.5 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,2000, -63 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="Mic1 high band power threshold" array_index="26" bit="0,15"                                                          check_list="0,default(2000 -63 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,1500, -64.5 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="FE VAD thd for mic switch" array_index="27" bit="0,15"                                                               check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<!--Field name="Mic2 HB thd for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="28" bit="0,15" check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB2 thd2 for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="29" bit="0,15" check_list="0,default(10000 -5 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,4096,-9 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB Abs Power thd for mic2 Blocking" array_index="30" bit="0,15" check_list="0,default(1500)"/-->
+			<!--Field name="Mic1 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="31" bit="0,15" check_list="0,default(5000)"/-->
+			<!--Field name="Mic2 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="32" bit="0,15" check_list="0,default(150)"/-->
+			<!--Field name="Mic2 LB2 Abs Power thd for mic2 Blocking (250~750 HZ (Band1))" array_index="33" bit="0,15" check_list="0,default(20000)"/-->
+			<!--Field name="Mic2 FB Abs Power thd for mic2 Blocking (0~8K HZ)" array_index="34" bit="0,15" check_list="0,default(10000)"/-->
+			<!--Field name="Stationary Noise Over-estimation for Mic2 Blocking" array_index="35" bit="0,2" check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/-->
+			<Field name="Mic2 band0 Power thrshold for mic Selection mic2 band 0 power threshold" array_index="36" bit="0,15"                  check_list="0,default(7500 -39.5 dB),1000,-48.2 dB,3000,-43.5 dB,5000,-41.2 dB,10000,-38.2 dB,20000,-35.2 dB,30000,-33.5 dB"/>
+			<Field name="FE VAD thd for VCE" array_index="40" bit="0,15"                                                                       check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<Field name="Noise type detection NB switch" array_index="0" bit="0,0"                                                             check_list="0,off,1,on"/>
+			<Field name="Noise type detection WB switch" array_index="0" bit="1,1"                                                             check_list="0,off,1,on"/>
+			<Field name="Noise type detection rejection THD" array_index="0" bit="9,10"                                                        check_list="0,lowest,1,lower,2,stronger,3,strongest"/>
+			<Field name="Noise type detection detection confidence THD" array_index="0" bit="11,12"                                            check_list="0,loosest,1,looser,2,stricter,3,strictest"/>
+			<Field name="Noise type detection detection speed" array_index="0" bit="13,14"                                                     check_list="0,slowest,1,slower,2,faster,3,fastest"/>
+			<Field name="Noise type detection using default model" array_index="0" bit="15"                                                    check_list="0,on,1,off"/>
+			<Field name="Noise type specialization enable at speechband(pub)" array_index="1" bit="0,0"                                        check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at speechband(pub)" array_index="1" bit="1,4"                                check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at speechband(pub)" array_index="1" bit="5,8"                                check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at speechband(pub)" array_index="1" bit="9,12"                             check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at midband(road,corssroad,train)" array_index="2" bit="0,0"                          check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at midband(road,corssroad,train)" array_index="2" bit="1,4"                  check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at midband(road,corssroad,train)" array_index="2" bit="5,8"                  check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at midband(road,corssroad,train)" array_index="2" bit="9,12"               check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at lowband(car)" array_index="3" bit="0,0"                                           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at lowband(car)" array_index="3" bit="1,4"                                   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at lowband(car)" array_index="3" bit="5,8"                                   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at lowband(car)" array_index="3" bit="9,12"                                check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="0,0"                        check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="1,4"                check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="5,8"                check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="9,12"             check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+		</Param>
+		<Param name="dmnr_para_swb2" type="ushort_array">
+			<Field name="NC max band" array_index="0" bit="0,0"                                                                                check_list="0,0-8K,1,0-4K"/>
+			<Field name="ABM Taps" array_index="0" bit="1,1"                                                                                   check_list="0,4taps,1,1tap"/>
+			<Field name="Initial Convergence" array_index="0" bit="2,2"                                                                        check_list="0,off,1,on"/>
+			<Field name="VAD hysteresis" array_index="0" bit="3,3"                                                                             check_list="0,on,1,off"/>
+			<Field name="Adaptive VAD hysteresis" array_index="0" bit="4,4"                                                                    check_list="0,on,1,off"/>
+			<Field name="Strong nonstationary suppression" array_index="0" bit="5,5"                                                           check_list="0,off,1,on"/>
+			<Field name="Less NS Gain" array_index="0" bit="6,8"                                                                               check_list="0,off,1,weakest,2,weaker,3,weak,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Dynamic NS LB in normal position" array_index="0" bit="9,10"                                                          check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Wide-Angle" array_index="0" bit="11,12"                                                              check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Dynamic NS LB in Mic2" array_index="0" bit="13,14"                                                                    check_list="0,off,1,800 ms,2,400 ms,3,200 ms"/>
+			<Field name="Adaptive Noise Fast Converge" array_index="0" bit="15,15"                                                             check_list="0,off,1,on"/>
+			<Field name="TMOS Detection THD in Mic1" array_index="1" bit="0,15"                                                                check_list="0,default(100),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="Normal Position Harmonic Reconstruction" array_index="2" bit="0,1"                                                    check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Normal Position Pitch Protection" array_index="2" bit="2,2"                                                           check_list="0,off,1,on"/>
+			<Field name="WA Position Harmonic Reconstruction" array_index="2" bit="3,4"                                                        check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="WA Position Pitch Protection" array_index="2" bit="5,5"                                                               check_list="0,off,1,on"/>
+			<Field name="Mic2 Harmonic Reconstruction" array_index="2" bit="6,7"                                                               check_list="0,off,1,weak,2,medium,3,strong"/>
+			<Field name="Mic2 Pitch Protection" array_index="2" bit="8,8"                                                                      check_list="0,off,1,on"/>
+			<Field name="Noise Level detection for Harmonic Reconstruction" array_index="2" bit="9,10"                                         check_list="0,off,1,apply HR only for high-SNR,2,apply HR only for medium-SNR,3,apply HR only for low-SNR"/>
+			<Field name="HR HB Skip" array_index="2" bit="11,11"                                                                               check_list="0,no control,1,skip 4k-8K"/>
+			<Field name="HR HB Nonlinear shaping" array_index="2" bit="12,12"                                                                  check_list="0,off,1,on"/>
+			<Field name="NS Strong HB suppression" array_index="3" bit="0,0"                                                                   check_list="0,off,1,on"/>
+			<Field name="NS Strong DC suppression" array_index="3" bit="1,2"                                                                   check_list="0,off,1,93.75 Hz,2,156.25 Hz,3,250 Hz"/>
+			<Field name="Strong Suppression based on mic1 mic2 power difference information" array_index="3" bit="3,5"                         check_list="0,weakest,1,weaker,2,weak,3,medium,4,medium,5,strong,6,stronger,7,strongest"/>
+			<Field name="Noise underestimation when VAD on" array_index="3" bit="6,6"                                                          check_list="0,off,1,on"/>
+			<Field name="Band 2 PD VAD" array_index="3" bit="7,7"                                                                              check_list="0,off,1,on"/>
+			<Field name="ABM update when mic2 blocking" array_index="3" bit="8,8"                                                              check_list="0,off,1,on"/>
+			<Field name="Stationary Noise Over-estimation for TMOS" array_index="3" bit="9,11"                                                 check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/>
+			<Field name="ABM learning speed" array_index="3" bit="12,13"                                                                       check_list="0,normal,1,fast,2,faster,3,very fast"/>
+			<Field name="ABM learn fast only in high SNR" array_index="3" bit="14,14"                                                          check_list="0,bits 12~13 apply in all condition,1,bits 12~13 apply in high SNR condition(depends on NB cal-data[7])"/>
+			<Field name="Power Ratio Scaler Modifier" array_index="4" bit="0,15"                                                               check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="Switch or lower bound of MagiNRDual-NS Gain" array_index="5" bit="0,3"                                                check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Low SNR detection THD" array_index="5" bit="4,11"                                                                     check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Band0p5 Power Ratio Scaler Modifier" array_index="6" bit="0,15"                                                       check_list="0,default(WB normal Cal-data[40]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000)"/>
+			<Field name="Disable NC function threshold" array_index="7" bit="0,15"                                                             check_list="0,default(600),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="SNRI Expander switch" array_index="8" bit="0"                                                                         check_list="0,off,1,on"/>
+			<Field name="SNRI Expander Gain LB" array_index="8" bit="1,3"                                                                      check_list="0,9 dB,1,12 dB,2,15 dB,3,18 dB,4,21 dB,5,24 dB,6,27 dB,7,30 dB"/>
+			<Field name="SNRI Expander Gain Under-estimation" array_index="8" bit="4"                                                          check_list="0,6 dB,1,12 dB"/>
+			<Field name="SNRI Expander Triggered THD" array_index="8" bit="5,6"                                                                check_list="0,-30 dB(hardest),1,-28 dB,2,-26 dB,3,-24 dB(easiest)"/>
+
+			<Field name="Replace PR with PD VAD for cal-data switch" array_index="10" bit="0,0"                                                check_list="0,off,1,on"/>
+			<Field name="PR THD for cal-data switch" array_index="10" bit="1,2"                                                                check_list="0,1500,1,2500,2,3500,3,4000"/>
+			<Field name="WA switch VAD ONLY consider 1-mic VAD" array_index="10" bit="3,3"                                                     check_list="0,off,1,on"/>
+			<Field name="Disable Well-cal VAD at WA" array_index="10" bit="4,4"                                                                check_list="0,off,1,on"/>
+			<Field name="Well-cal shadow VAD bias ctrl" array_index="10" bit="5,6"                                                             check_list="0,300,1,600,2,1000,3,2000"/>
+			<Field name="Band1 SNR diff of cal-data as PD min" array_index="10" bit="7,7"                                                      check_list="0,off,1,on"/>
+			<Field name="Disable PD VAD at WA" array_index="10" bit="8,8"                                                                      check_list="0,off,1,on"/>
+			<Field name="Phone up or down cover range at WA" array_index="10" bit="9,12"                                                       check_list="0,default(6dB),1,1dB(narrow),2,2dB,3,3dB,4,4dB,5,5dB,6,6dB,7,7dB,8,8dB,9,9dB,10,10dB,11,11dB,12,12dB,13,13dB,14,14dB,15,15dB(wide)"/>
+			<Field name="Fb stationary noise THD for high SNR for ENH_DMNR_VAD" array_index="10" bit="13,14"                                   check_list="0,10000,1,15000,2,20000,3,30000"/>
+			<Field name="Consider Well-cal ABM PD VAD as ENH_DMNR_VAD" array_index="10" bit="15,15"                                            check_list="0,off,1,on"/>
+			<Field name="ABM normal nlms stepsize under-estimate ratio" array_index="11" bit="0,1"                                             check_list="0,32767(fast),1,16384,2,10922,3,8192(slow)"/>
+			<Field name="ABM shadow nlms stepsize" array_index="11" bit="2,3"                                                                  check_list="0,5734(slow),1,9830,2,16384,3,22937(fast)"/>
+			<Field name="LB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="4,5"                                             check_list="0,22000,1,16000,2,10000,3,8000"/>
+			<Field name="HB of 1-mic VAD for ABM normal stepsize at WA" array_index="11" bit="6,7"                                             check_list="0,32750,1,32500,2,30000,3,25000"/>
+			<Field name="Disable NC at WA" array_index="11" bit="8,8"                                                                          check_list="0,off,1,on"/>
+			<Field name="Start band of NC at WA" array_index="11" bit="9,10"                                                                   check_list="0,off,1,1,2,2,3,3"/>
+			<Field name="End band of NC at WA" array_index="11" bit="11,12"                                                                    check_list="0,off,1,12,2,9,3,6"/>
+			<Field name="Sb 1-mic vad THD for ABM normal stepsize at WA" array_index="11" bit="13,13"                                          check_list="0,10000,1,16000"/>
+			<Field name="ABM shadow THD when cal-data switch" array_index="11" bit="14,15"                                                     check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="Band range of GCC" array_index="12" bit="0,0"                                                                         check_list="0,0~7,1,0~3"/>
+			<Field name="Rise rate for GCC PHAT" array_index="12" bit="1,2"                                                                    check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Fall rate for GCC PHAT" array_index="12" bit="3,4"                                                                    check_list="0,30500,1,30000,2,29491,3,29000"/>
+			<Field name="Band1 VAD on at WA" array_index="12" bit="5,5"                                                                        check_list="0,off,1,on"/>
+			<Field name="GCC delay THD for ABM" array_index="12" bit="6,8"                                                                     check_list="0,6,1,7,2,8,3,9,4,10,5,11,6,12,7,13"/>
+			<Field name="ABM VAD THD at normal if consider min of band1 + 2" array_index="12" bit="9,10"                                       check_list="0,strickest,1,strick,2,loose,3,loosest"/>
+			<Field name="AGC skip FE VAD" array_index="12" bit="11,11"                                                                         check_list="0,on,1,off"/>
+			<Field name="Skip MCRA VAD for GCC updating" array_index="12" bit="12,12"                                                          check_list="0,on,1,off"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="13,13"                                              check_list="0,off,1,on"/>
+			<Field name="Fix PD min at initial value" array_index="12" bit="14,14"                                                             check_list="0,off,1,on"/>
+			<Field name="Consider PD VAD to improve cal-data switch" array_index="12" bit="15,15"                                              check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob WA THD for ABM stepsize when high SNR at WA" array_index="13" bit="0,0"                               check_list="0,off,1,on"/>
+			<Field name="GCC prob THD for ABM stepsize when high SNR at WA" array_index="13" bit="1,2"                                         check_list="0,500,1,1000,2,2000,3,3000"/>
+			<Field name="Consider SNR to adjust ABM VAD THD at WA" array_index="13" bit="3,3"                                                  check_list="0,off,1,on"/>
+			<Field name="ABM VAD THD when high SNR at WA" array_index="13" bit="4,5"                                                           check_list="0,6000,1,8000,2,10000,3,15000"/>
+			<Field name="ABM VAD THD when high SNR at normal if  consider band1 + 2" array_index="13" bit="6,7"                                check_list="0,10000,1,12000,2,16000,3,20000"/>
+			<Field name="GCC delay THD for ABM step size at WA" array_index="13" bit="8,11"                                                    check_list="0,off,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15"/>
+			<Field name="ENH DMNR VAD skip consider high SNR VAD if FE VAD on at WA" array_index="13" bit="12,12"                              check_list="0,on,1,off"/>
+			<Field name="Skip FE VAD for ABM normal NLMS stepsize update" array_index="13" bit="14,14"                                         check_list="0,off,1,on"/>
+			<Field name="Reduce GCC prob THD for ABM stepsize update when GCC only consider 0~2kHz" array_index="13" bit="15,15"               check_list="0,off,1,on"/>
+			<Field name="Low SNR detection THD for ABM VAD THD at WA" array_index="14" bit="4,11"                                              check_list="0,default(9830400),1,65536,8,524288,16,1048576,50,3276800,75,4915200,200,13107200,250,16384000"/>
+			<Field name="Normal power ratio THD for cal-data switch if only calibrate normal position" array_index="15" bit="0,15"             check_list="0,default(WB normal Cal-data[50]),1000,1000,1500,1500,2000,2000,2500,2500,3000,3000,4000,4000,5000,5000,6500,6500,8000,8000,10000,10000,15000,15000,25000,25000,30000,30000"/>
+			<Field name="TMOS threshold for WA" array_index="16" bit="0,15"                                                                    check_list="0,default(same as NB cal-data[1]),50,50,70,70,90,90,120,120,150,150,500,500,1000,1000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="WA TMOS control" array_index="17" bit="0,0"                                                                           check_list="0,off,1,on"/>
+
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2" array_index="20" bit="0,3"                                                check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic2 stationary noise tracking strength" array_index="20" bit="4,5"                                                   check_list="0,suppress least,1,suppress less,2,suppress more,3,suppress most"/>
+			<Field name="Mic2 stationary noise tracking VAD threshold" array_index="20" bit="6,7"                                              check_list="0,suppress most,1,suppress more,2,suppress less,3,suppress least"/>
+			<Field name="Switch to Mic1 speed THD" array_index="20" bit="8,9"                                                                  check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Switch to Mic2 speed THD" array_index="20" bit="10,11"                                                                check_list="0,450 ms,1,225 ms,2,600 ms,3,750 ms"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic2 TMOS" array_index="20" bit="12,13"                                         check_list="0,off,1,3 dB,2,6 dB,3,9 dB"/>
+			<Field name="Mic2 direction VAD threshold" array_index="20" bit="14,15"                                                            check_list="0,loosest,1,loose,2,strick,3,strickest"/>
+			<Field name="Reduce DMNR adaptive TX gain when mic2" array_index="21" bit="0,3"                                                    check_list="0,0 dB,1,-1 dB,2,-2 dB,3,-3 dB,4,-4 dB,5,-5 dB,6,-6 dB,7,-7 dB,8,0 dB,9,1 dB,10,2 dB,11,3 dB,12,4 dB,13,5 dB,14,6 dB,15,7 dB"/>
+			<Field name="Mic siwtch algorithm 250~750Hz mic1/mic2 energy threshold" array_index="21" bit="4,5"                                 check_list="0,-2 dB,1,-0.06 dB,2,-4 dB,3,-6 dB"/>
+			<Field name="prevent finger touch from selecting to mic1" array_index="21" bit="8,9"                                               check_list="0,off,1,-15 dB,2,-12 dB,3,-10 dB"/>
+			<Field name="Mic2 direction detection" array_index="21" bit="10,10"                                                                check_list="0,on,1,off"/>
+			<Field name="Mic switch algorithm delay control" array_index="21" bit="11,14"                                                      check_list="0,10,1,11,2,12,3,13,4,14,5,15,6,16,7,17,8,18,9,19,10,20,11,21,12,22,13,23,14,24,15,25"/>
+			<Field name="Mic switch PD speed" array_index="21" bit="15,15"                                                                     check_list="0,fast,1,slow"/>
+			<Field name="TMOS Detection THD in Mic2" array_index="22" bit="0,15"                                                               check_list="0,15000,1500,1500,3000,3000,5000,5000,10000,10000,20000,20000,32767,32767"/>
+			<Field name="mic1/mic2 HB range" array_index="23" bit="0,0"                                                                        check_list="0,2-4 kHz,1,1-3 kHz"/>
+			<Field name="Mic2 direction VAD enable" array_index="23" bit="1,1"                                                                 check_list="0,off,1,on"/>
+			<Field name="Mic siwtch algorithm 0~250 Hz mic1/mic2 energy threshold" array_index="23" bit="2,3"                                  check_list="0,-18 dB,1,-13 dB,2,-10 dB,3,off"/>
+			<Field name="DMNR ASLR in noisy signal control" array_index="23" bit="4,4"                                                         check_list="0,off,1,on"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold1" array_index="23" bit="5,6"                            check_list="0,-7.4 dB,1,-8.6 dB,2,-10.4 dB,3,off"/>
+			<Field name="Mic2 Blocking algorithm 0~250 Hz mic1 - mic2 energy threshold2" array_index="23" bit="7,8"                            check_list="0,-3.4 dB,1,-5.2 dB,2,-2.2 dB,3,-1.2 dB"/>
+			<Field name="Switch to mic1 speed THD" array_index="23" bit="9,10"                                                                 check_list="0,450 ms,1,225 ms,2,300 ms,3,375 ms"/>
+			<Field name="WA Ctrl Switch for Mic2 Blocking" array_index="23" bit="11,11"                                                        check_list="0,on,1,off"/>
+			<Field name="Lower bound of MagiNRDual-NS Gain for mic1" array_index="23" bit="12,15"                                              check_list="0,off,1,2 dB,2,4 dB,3,6 dB,4,8 dB,5,10 dB,6,12 dB,7,14 dB,8,16 dB,9,18 dB,10,20 dB,11,22 dB,12,24 dB,13,26 dB,14,28 dB,15,30 dB"/>
+			<Field name="Mic siwtch algorithm HB 2k~4k Hz (if cal [23] bit 0 = 1 HB is 1k~3k)" array_index="24" bit="0,15"                     check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/>
+			<Field name="Mic1 or Mic2 band 1 power thd for one-mic VAD" array_index="25" bit="0,15"                                            check_list="0,default(1500 -64.5 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,2000, -63 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="Mic1 high band power threshold" array_index="26" bit="0,15"                                                           check_list="0,default(2000 -63 dB Fs),500,-69.3 dB Fs,1000,-66.3 dB Fs,1500, -64.5 dB Fs,3000, -61.5 dB Fs,5000, -59.3 dB Fs,10000, -56.3 dB Fs,20000, -53.3 dB Fs,30000, -51.5 dB Fs"/>
+			<Field name="FE VAD thd for mic switch" array_index="27" bit="0,15"                                                                check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<!--Field name="Mic2 HB thd for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="28" bit="0,15" check_list="0,default(4096 -9 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,10362,-5 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB2 thd2 for mic2 Blocking Switch (if cal [23] bit 0 = 1 HB is 1k~3k otherwise 2k~4k)" array_index="29" bit="0,15" check_list="0,default(10000 -5 dB),2067,-12 dB,2603,-11 dB,3277,-10 dB,4096,-9 dB,5193,-8 dB,6538,-7 dB,8231,-6 dB,13045,-4 dB,16422,-3 dB,20675,-2 dB,26028,-1 dB"/-->
+			<!--Field name="Mic2 HB Abs Power thd for mic2 Blocking" array_index="30" bit="0,15" check_list="0,default(1500)"/-->
+			<!--Field name="Mic1 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="31" bit="0,15" check_list="0,default(5000)"/-->
+			<!--Field name="Mic2 LB Abs Power thd for mic2 Blocking (250HZ (Band0))" array_index="32" bit="0,15" check_list="0,default(150)"/-->
+			<!--Field name="Mic2 LB2 Abs Power thd for mic2 Blocking (250~750 HZ (Band1))" array_index="33" bit="0,15" check_list="0,default(20000)"/-->
+			<!--Field name="Mic2 FB Abs Power thd for mic2 Blocking (0~8K HZ)" array_index="34" bit="0,15" check_list="0,default(10000)"/-->
+			<!--Field name="Stationary Noise Over-estimation for Mic2 Blocking" array_index="35" bit="0,2" check_list="0,0 dB,1,1.5 dB,2,3 dB,3,4.5 dB,4,6 dB,5,7.5 dB,6,9 dB,7,10.5 dB"/-->
+			<Field name="Mic2 band0 Power thrshold for mic Selection mic2 band 0 power threshold" array_index="36" bit="0,15"                  check_list="0,default(7500 -39.5 dB),1000,-48.2 dB,3000,-43.5 dB,5000,-41.2 dB,10000,-38.2 dB,20000,-35.2 dB,30000,-33.5 dB"/>
+			<Field name="FE VAD thd for VCE" array_index="40" bit="0,15"                                                                       check_list="0,0,1500,1500,3000,3000,5000,5000,10000,10000,15000,15000,20000,20000,32767,32767"/>
+			<Field name="Noise type detection NB switch" array_index="0" bit="0,0"                                                             check_list="0,off,1,on"/>
+			<Field name="Noise type detection WB switch" array_index="0" bit="1,1"                                                             check_list="0,off,1,on"/>
+			<Field name="Noise type detection rejection THD" array_index="0" bit="9,10"                                                        check_list="0,lowest,1,lower,2,stronger,3,strongest"/>
+			<Field name="Noise type detection detection confidence THD" array_index="0" bit="11,12"                                            check_list="0,loosest,1,looser,2,stricter,3,strictest"/>
+			<Field name="Noise type detection detection speed" array_index="0" bit="13,14"                                                     check_list="0,slowest,1,slower,2,faster,3,fastest"/>
+			<Field name="Noise type detection using default model" array_index="0" bit="15"                                                    check_list="0,on,1,off"/>
+			<Field name="Noise type specialization enable at speechband(pub)" array_index="1" bit="0,0"                                        check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at speechband(pub)" array_index="1" bit="1,4"                                check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at speechband(pub)" array_index="1" bit="5,8"                                check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at speechband(pub)" array_index="1" bit="9,12"                             check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at midband(road,corssroad,train)" array_index="2" bit="0,0"                          check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at midband(road,corssroad,train)" array_index="2" bit="1,4"                  check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at midband(road,corssroad,train)" array_index="2" bit="5,8"                  check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at midband(road,corssroad,train)" array_index="2" bit="9,12"               check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at lowband(car)" array_index="3" bit="0,0"                                           check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at lowband(car)" array_index="3" bit="1,4"                                   check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at lowband(car)" array_index="3" bit="5,8"                                   check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at lowband(car)" array_index="3" bit="9,12"                                check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+			<Field name="Noise type specialization enable at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="0,0"                        check_list="0,off,1,on"/>
+			<Field name="Noise type specialization VAD THD offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="1,4"                check_list="0,off,1,+500,2,+1000,3,+1500,4,+2000,5,+2500,6,+3000,7,+3500,9,-500,10,-1000,11,-1500,12,-2000,13,-2500,14,-3000,15,-3500"/>
+			<Field name="Noise type specialization Gain LB offset at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="5,8"                check_list="0,off,1,-2 dB,2,-4 dB,3,-6 dB,4,-8 dB,5,-10 dB,6,-12 dB,7,-14 dB,9,2 dB,10,4 dB,11,6 dB,12,8 dB,13,10 dB,14,12 dB,15,14 dB"/>
+			<Field name="Noise type specialization PD VAD tolerance at high-SNR(cafe,mensa,callcenter)" array_index="4" bit="9,12"             check_list="0,off,1,1 dB,2,2 dB,3,3 dB,4,4 dB,5,5 dB,6,6 dB,7,7 dB,9,-1 dB,10,-2 dB,11,-3 dB,12,-4 dB,13,-5 dB,14,-6 dB,15,-7 dB"/>
+		</Param>
+		<Param name="sph_in_iir_enh_eq_freq" type="double_array"/>
+		<Param name="sph_out_iir_enh_eq_freq" type="double_array"/>
+		<Param name="sph_in_iir_enh_eq_mag" type="double_array"/>
+		<Param name="sph_out_iir_enh_eq_mag" type="double_array"/>
+		<Param name="sph_in_iir_enh_pmv_gain" type="double_array"/>
+		<Param name="sph_out_iir_enh_pmv_gain" type="double_array"/>
+		<Param name="sph_in_iir_enh_pmv_freq" type="double_array"/>
+		<Param name="sph_out_iir_enh_pmv_freq" type="double_array"/>
+		<Param name="sph_in_iir_enh_pmv_type" type="ushort_array"/>
+		<Param name="sph_out_iir_enh_pmv_type" type="ushort_array"/>
+		<Param name="sph_in_iir_enh_pmv_qfactor" type="double_array"/>
+		<Param name="sph_out_iir_enh_pmv_qfactor" type="double_array"/>
+	</ParamUnit>
+</ParamUnitDesc>

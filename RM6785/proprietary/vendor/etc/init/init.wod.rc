@@ -1,0 +1,32 @@
+on post-fs-data
+    mkdir /data/vendor/ipsec 0700 root root
+    mkdir /data/vendor/ipsec/wo 0700 root root
+    mkdir /dev/vendor/net/ 0700 root root
+
+on property:vendor.volte_md_status=ready && property:persist.vendor.mtk_wfc_support=1
+    start vendor.epdg_wod
+
+on property:vendor.volte_md_status=reset
+    stop vendor.epdg_wod
+
+on property:vendor.volte_md_status=stop
+    stop vendor.epdg_wod
+
+on property:vendor.volte_md_status=flightmode
+    stop vendor.epdg_wod
+
+on property:vendor.volte_md_status=exception
+    stop vendor.epdg_wod
+
+# Trigger TRM when wod restart
+on property:ro.vendor.md_apps.load_type=user && property:init.svc.vendor.epdg_wod=restarting
+    setprop vendor.ril.mux.report.case 2
+    setprop vendor.ril.muxreport 1
+
+service vendor.epdg_wod /vendor/bin/epdg_wod
+    class late_start
+    socket wod_action stream 660 root system
+    socket wod_sim    stream 660 root system
+    user root
+    group root system log inet radio net_admin
+    disabled

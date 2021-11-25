@@ -1,0 +1,36 @@
+#
+
+on early-init
+
+on post-fs-data
+
+#SeLinux
+    mkdir /data/vendor/mdlpm 0770 system radio
+    restorecon /data/vendor/mdlpm
+    mkdir /data/vendor/md3 0770 system radio
+    restorecon /data/vendor/md3
+
+    mkdir /data/vendor_de/md 0770 system radio
+    restorecon /data/vendor_de/md
+
+    restorecon_recursive /mnt/vendor/protect_f
+    restorecon_recursive /mnt/vendor/protect_s
+
+#
+#  Modem related services
+#
+
+service vendor.ccci_fsd /vendor/bin/ccci_fsd 0
+    user radio
+    group radio system
+    class core
+    priority -20
+    ioprio rt 4
+    oneshot
+
+service vendor.ccci3_fsd /vendor/bin/ccci_fsd 2
+    user radio
+    group  radio system
+    class core
+    oneshot
+

@@ -1,0 +1,4 @@
+service soter_hal /vendor/bin/hw/vendor.trustonic.soter@1.0-service
+    class late_start
+    user system
+    group system

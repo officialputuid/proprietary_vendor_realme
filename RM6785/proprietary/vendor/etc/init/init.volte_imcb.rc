@@ -1,0 +1,17 @@
+#copy from device/mediatek/common/init.volte.rc
+
+service vendor.volte_imcb /vendor/bin/volte_imcb
+    class core
+    socket volte_imsa1 stream 660 root radio
+    socket volte_imsa2 stream 660 root radio
+#    socket volte_imsvt1 stream 660 root radio
+#    socket volte_imsvt2 stream 660 root radio
+    socket volte_ut stream 660 root radio
+    user root 
+    group system log inet radio
+    oneshot
+    disabled
+
+#
+# VoLTE related services (End)
+#

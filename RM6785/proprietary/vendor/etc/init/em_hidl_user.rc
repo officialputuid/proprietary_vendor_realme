@@ -1,0 +1,10 @@
+service emhidl_user /vendor/bin/em_hidl
+    interface vendor.mediatek.hardware.engineermode@1.0::IEmd EmHidlServer
+    interface vendor.mediatek.hardware.engineermode@1.1::IEmd EmHidlServer
+    interface vendor.mediatek.hardware.engineermode@1.2::IEmd EmHidlServer
+    interface vendor.mediatek.hardware.engineermode@1.3::IEmd EmHidlServer
+    class hal
+    oneshot
+    disabled
+    user system
+    group bluetooth radio gps system nfc

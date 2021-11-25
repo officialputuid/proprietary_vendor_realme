@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mnl_config version="20050701.6.00.00" type="gps">
+
+    <feature>GLP
+        <version>2.0</version>
+        <config>1</config>
+        <format>Enable</format>
+        <setting>1</setting>
+    </feature>
+
+    <feature>CAIC
+        <version>1.0</version>
+        <config>0</config>
+        <format>L1 CAIC FrequencyHz</format>
+        <setting>1560000000</setting>
+        <format>L5 CAIC FrequencyHz</format>
+        <setting>1170000000</setting>
+    </feature>
+
+    <feature>GnssMode
+        <version>1.0</version>
+        <config>0</config>
+        <format>GP+GL:0, GP+BD:1, GP+GL+BD:2, GP:3, BD:4, GL:5, GP+GL+GA+BD:6, GP+GA:7, GP+GL+GA:8, GA:9</format>
+        <setting>6</setting>
+    </feature>
+
+    <feature>Bluesky
+        <version>1.0</version>
+        <config>1</config>
+        <format>enable:0,disable:1</format>
+        <setting>1</setting>
+    </feature>
+
+    <feature>MDTime
+        <version>1.0</version>
+        <config>1</config>
+        <format>featureOption,requestInterval,sizeOfWindow,syncBackNum(optional)</format>
+        <setting>1,5000,1500,0</setting>
+    </feature>
+</mnl_config>

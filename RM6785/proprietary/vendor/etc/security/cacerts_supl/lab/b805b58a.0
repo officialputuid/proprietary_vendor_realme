@@ -1,0 +1,81 @@
+-----BEGIN CERTIFICATE-----
+MIIDozCCAougAwIBAgIJANEvjDOAQgP4MA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNV
+BAYTAkRFMRAwDgYDVQQIEwdCYXZhcmlhMQ8wDQYDVQQHEwZNdW5pY2gxFjAUBgNV
+BAoMDVJvaGRlJlNjaHdhcnoxCzAJBgNVBAsTAjFTMRAwDgYDVQQDEwcxUy1UZXN0
+MCAXDTc5MTIzMTIzMDAzMVoYDzIwNjkxMjA4MjMwMDMxWjBnMQswCQYDVQQGEwJE
+RTEQMA4GA1UECBMHQmF2YXJpYTEPMA0GA1UEBxMGTXVuaWNoMRYwFAYDVQQKDA1S
+b2hkZSZTY2h3YXJ6MQswCQYDVQQLEwIxUzEQMA4GA1UEAxMHMVMtVGVzdDCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMBoKCmftTG6lPq0HfCNGFkFc51u
+b6dPAYUll1E00bcrVw9yQg10QoNNpnj4WhRkAcHo9PJNHK1m27Qd4R4Hur65T2iF
+vm3M+aYYraHEi8G/V2+WVTuxRnQ5fBg+My0TwxVHKQ3wijoX0nsr7fg7/c/ASHmx
+HxgN689DtX42+qEAVGAsDM8YnaW0bMEdWTzPpx/73N4YP61aU+LowLPqHu32eW2s
+E0e2XqW00M8VWhm78utzIScYNjYfNt8IoAJ+knOPU4qgbRijRIGIVKK5B9JVakUm
+8JmdnpjH7GiYlXh0Gw9ozXM8njLqs+JC1c92G+e424TiBBifbqsEI23UlRcCAwEA
+AaNQME4wHQYDVR0OBBYEFG2DKMmqenJFiSe//ZtiWfAzhePLMB8GA1UdIwQYMBaA
+FG2DKMmqenJFiSe//ZtiWfAzhePLMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEL
+BQADggEBAL7HlFRpjVMAW0SBWHBsJ9gj7XJJo14U3i+5L55AX6ft/V+chfkiP2pL
+9HXged6zAXBML5xWqmXFHMgYY27sNKehsvasbPyGdDy9OEa8LYTLwJQTs6GdBiaa
+akzRagzEw/yK3kfGx5MpPEAV5OuA3k/C7BOMMXzAEXfHnMP3J2DmHhzziGa8VzsI
+R9Mn92j3zpQR7+u5d94n5p7I1z2RxdY24a91APBmOM8n1p5xLjLOoRfnaOF77Viz
+I4XXS8NlC+M9jtnn/ePtFXr5pYD22oJq5ez9IWvihpcifCmp9cPAdtWbbLG5wQ6V
+3PLic4dSVhN26h9KzwyXSG1C2bzpC3c=
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            d1:2f:8c:33:80:42:03:f8
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=DE, ST=Bavaria, L=Munich, O=Rohde&Schwarz, OU=1S, CN=1S-Test
+        Validity
+            Not Before: Dec 31 23:00:31 1979 GMT
+            Not After : Dec  8 23:00:31 2069 GMT
+        Subject: C=DE, ST=Bavaria, L=Munich, O=Rohde&Schwarz, OU=1S, CN=1S-Test
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c0:68:28:29:9f:b5:31:ba:94:fa:b4:1d:f0:8d:
+                    18:59:05:73:9d:6e:6f:a7:4f:01:85:25:97:51:34:
+                    d1:b7:2b:57:0f:72:42:0d:74:42:83:4d:a6:78:f8:
+                    5a:14:64:01:c1:e8:f4:f2:4d:1c:ad:66:db:b4:1d:
+                    e1:1e:07:ba:be:b9:4f:68:85:be:6d:cc:f9:a6:18:
+                    ad:a1:c4:8b:c1:bf:57:6f:96:55:3b:b1:46:74:39:
+                    7c:18:3e:33:2d:13:c3:15:47:29:0d:f0:8a:3a:17:
+                    d2:7b:2b:ed:f8:3b:fd:cf:c0:48:79:b1:1f:18:0d:
+                    eb:cf:43:b5:7e:36:fa:a1:00:54:60:2c:0c:cf:18:
+                    9d:a5:b4:6c:c1:1d:59:3c:cf:a7:1f:fb:dc:de:18:
+                    3f:ad:5a:53:e2:e8:c0:b3:ea:1e:ed:f6:79:6d:ac:
+                    13:47:b6:5e:a5:b4:d0:cf:15:5a:19:bb:f2:eb:73:
+                    21:27:18:36:36:1f:36:df:08:a0:02:7e:92:73:8f:
+                    53:8a:a0:6d:18:a3:44:81:88:54:a2:b9:07:d2:55:
+                    6a:45:26:f0:99:9d:9e:98:c7:ec:68:98:95:78:74:
+                    1b:0f:68:cd:73:3c:9e:32:ea:b3:e2:42:d5:cf:76:
+                    1b:e7:b8:db:84:e2:04:18:9f:6e:ab:04:23:6d:d4:
+                    95:17
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier:
+                6D:83:28:C9:AA:7A:72:45:89:27:BF:FD:9B:62:59:F0:33:85:E3:CB
+            X509v3 Authority Key Identifier:
+                keyid:6D:83:28:C9:AA:7A:72:45:89:27:BF:FD:9B:62:59:F0:33:85:E3:CB
+
+            X509v3 Basic Constraints:
+                CA:TRUE
+    Signature Algorithm: sha256WithRSAEncryption
+         be:c7:94:54:69:8d:53:00:5b:44:81:58:70:6c:27:d8:23:ed:
+         72:49:a3:5e:14:de:2f:b9:2f:9e:40:5f:a7:ed:fd:5f:9c:85:
+         f9:22:3f:6a:4b:f4:75:e0:79:de:b3:01:70:4c:2f:9c:56:aa:
+         65:c5:1c:c8:18:63:6e:ec:34:a7:a1:b2:f6:ac:6c:fc:86:74:
+         3c:bd:38:46:bc:2d:84:cb:c0:94:13:b3:a1:9d:06:26:9a:6a:
+         4c:d1:6a:0c:c4:c3:fc:8a:de:47:c6:c7:93:29:3c:40:15:e4:
+         eb:80:de:4f:c2:ec:13:8c:31:7c:c0:11:77:c7:9c:c3:f7:27:
+         60:e6:1e:1c:f3:88:66:bc:57:3b:08:47:d3:27:f7:68:f7:ce:
+         94:11:ef:eb:b9:77:de:27:e6:9e:c8:d7:3d:91:c5:d6:36:e1:
+         af:75:00:f0:66:38:cf:27:d6:9e:71:2e:32:ce:a1:17:e7:68:
+         e1:7b:ed:58:b3:23:85:d7:4b:c3:65:0b:e3:3d:8e:d9:e7:fd:
+         e3:ed:15:7a:f9:a5:80:f6:da:82:6a:e5:ec:fd:21:6b:e2:86:
+         97:22:7c:29:a9:f5:c3:c0:76:d5:9b:6c:b1:b9:c1:0e:95:dc:
+         f2:e2:73:87:52:56:13:76:ea:1f:4a:cf:0c:97:48:6d:42:d9:
+         bc:e9:0b:77
+SHA1 Fingerprint=20:50:70:2F:B0:B4:FD:EF:C2:22:07:75:CD:77:C1:5E:36:52:DC:48

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file -->
+
+  <cur_supl_profile name="Test_SIM2"
+      addr=""
+      port="7275"
+      tls="true"
+  />
+
+  <up_setting
+    ca_enable="true"
+    cert_from_sdcard="true"
+  />
+
+</mtk_agps_profiles>

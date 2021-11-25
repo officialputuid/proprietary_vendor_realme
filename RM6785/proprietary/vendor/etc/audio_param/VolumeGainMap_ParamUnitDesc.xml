@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="Profile">
+			<Category name="RCV_NORMAL" alias="RCV,Normal,Handset,Handset 2mic NR,Handset no 2mic NR,Lpbk_Handset,LPBK_RCV,Tty_HCO_Handset,Handset_SV,RCV_SV,Tty_HCO_Handset,HANDSET_PATH,HANDSET_EMERGENCY_PATH,HANDSET_EV_PATH,HANDSET_2MIC_PATH,HANDSET_2MICEV_PATH,LOOPBACK_HANDSET_PATH,RCV_EV,RCV_EMERGENCY" feature_option="RCV_PATH_INT"/>
+			<Category name="RCV_2_IN_1" alias="RCV,Normal,Handset,Handset 2mic NR,Handset no 2mic NR,Lpbk_Handset,LPBK_RCV,Tty_HCO_Handset,Handset_SV,RCV_SV,Tty_HCO_Handset,HANDSET_PATH,HANDSET_EMERGENCY_PATH,HANDSET_EV_PATH,HANDSET_2MIC_PATH,HANDSET_2MICEV_PATH,LOOPBACK_HANDSET_PATH,RCV_EV,RCV_EMERGENCY" feature_option="RCV_PATH_2_IN_1_SPK"/>
+			<Category name="RCV_3_IN_1" alias="RCV,Normal,Handset,Handset 2mic NR,Handset no 2mic NR,Lpbk_Handset,LPBK_RCV,Tty_HCO_Handset,Handset_SV,RCV_SV,Tty_HCO_Handset,HANDSET_PATH,HANDSET_EMERGENCY_PATH,HANDSET_EV_PATH,HANDSET_2MIC_PATH,HANDSET_2MICEV_PATH,LOOPBACK_HANDSET_PATH,RCV_EV,RCV_EMERGENCY" feature_option="RCV_PATH_3_IN_1_SPK"/>
+			<Category name="RCV_NO_ANA" alias="RCV,Normal,Handset,Handset 2mic NR,Handset no 2mic NR,Lpbk_Handset,LPBK_RCV,Tty_HCO_Handset,Handset_SV,RCV_SV,Tty_HCO_Handset,HANDSET_PATH,HANDSET_EMERGENCY_PATH,HANDSET_EV_PATH,HANDSET_2MIC_PATH,HANDSET_2MICEV_PATH,LOOPBACK_HANDSET_PATH,RCV_EV,RCV_EMERGENCY" feature_option="RCV_PATH_NO_ANA"/>
+
+			<Category name="HS" alias="Headset,3_pole_Headset,4_pole_Headset,3-pole headset,4-pole headset,Lpbk_Headset,HP,LPBK_HP,HEADSET_PATH,LOOPBACK_HEADSET_PATH,LOOPBACK_NODELAY_HEADSET_MIC1,LOOPBACK_NODELAY_HEADSET_MIC2,LOOPBACK_NODELAY_HEADSET_MIC3,HEADSET_3P5PI_PATH,Lpbk_Nodelay_Headset_Mic1,Lpbk_Nodelay_Headset_Mic2,Lpbk_Nodelay_Headset_Mic3"/>
+			<Category name="SPK_INT" alias="SPK,Hands-free,Hands-free 1mic NR,Hands-free no 1mic NR,Handsfree,MagiConference,Speaker,Lpbk_Handsfree,LPBK_SPK,Handsfree_SV,SPK_SV,Tty_HCO_Handsfree,SPEAKER_PHONE_PATH,SPEAKER_EMERGENCY_PATH,SPK_EV_PATH,SPK_2MIC_PATH,SPK_2MICEV_PATH,LOOPBACK_SPEAKER_PATH,SPK_EV,SPK_EMERGENCY" feature_option="SPK_PATH_INT"/>
+			<Category name="SPK_LO" alias="SPK,Hands-free,Hands-free 1mic NR,Hands-free no 1mic NR,Handsfree,MagiConference,Speaker,Lpbk_Handsfree,LPBK_SPK,Handsfree_SV,SPK_SV,Tty_HCO_Handsfree,SPEAKER_PHONE_PATH,SPEAKER_EMERGENCY_PATH,SPK_EV_PATH,SPK_2MIC_PATH,SPK_2MICEV_PATH,LOOPBACK_SPEAKER_PATH,SPK_EV,SPK_EMERGENCY" feature_option="SPK_PATH_LO"/>
+			<Category name="SPK_HP" alias="SPK,Hands-free,Hands-free 1mic NR,Hands-free no 1mic NR,Handsfree,MagiConference,Speaker,Lpbk_Handsfree,LPBK_SPK,Handsfree_SV,SPK_SV,Tty_HCO_Handsfree,SPEAKER_PHONE_PATH,SPEAKER_EMERGENCY_PATH,SPK_EV_PATH,SPK_2MIC_PATH,SPK_2MICEV_PATH,LOOPBACK_SPEAKER_PATH,SPK_EV,SPK_EMERGENCY" feature_option="SPK_PATH_HP"/>
+			<Category name="SPK_NO_ANA" alias="SPK,Hands-free,Hands-free 1mic NR,Hands-free no 1mic NR,Handsfree,MagiConference,Speaker,Lpbk_Handsfree,LPBK_SPK,Handsfree_SV,SPK_SV,Tty_HCO_Handsfree,SPEAKER_PHONE_PATH,SPEAKER_EMERGENCY_PATH,SPK_EV_PATH,SPK_2MIC_PATH,SPK_2MICEV_PATH,LOOPBACK_SPEAKER_PATH,SPK_EV,SPK_EMERGENCY" feature_option="SPK_PATH_NO_ANA"/>
+
+			<Category name="HSSPK" alias="Headset+Speaker"/>
+			<Category name="HS5POLE" alias="5-pole headset,5_pole_headset,TP5PI_PATH"/>
+			<Category name="HS5POLE_ANC" alias="5_pole_headset+ANC,5-pole headset+ANC"/>
+			<Category name="HAC" alias="HANDSETHAC_PATH"/>
+			<Category name="BT" alias="BT earphone,BLUETOOTH_PATH,STEREO_BLUETOOTH_PATH,BT_NSEC_OFF_PATH,BLUETOOTH_16_PATH,BT_NSEC_OFF_16_PATH,BT_NREC_On_NB,BT_NREC_On_WB"/>
+			<Category name="TTY" alias="Tty_VCO_Handset,Tty_VCO_Handsfree,TTY_PATH"/>
+			<Category name="USB" alias="USB Headset,Usb_Headset"/>
+			<Category name="HEARING_AID" alias="HEARING_AID"/>
+			<Category name="MISC" alias="HFK_PATH,CALLFWD_PATH,SLD_PATH,SPEAKERDOCK_PATH,SPEAKERDOCK_EV_PATH"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="dl_total_gain" type="short_array"/>
+		<Param name="dl_digital_gain" type="short_array"/>
+		<Param name="dl_analog_gain" type="short_array"/>
+		<Param name="dl_total_gain_decimal" type="short_array"/>
+		<Param name="dl_analog_type" type="int"/><!-- the corresponding analog type for dl_analog_gain -->
+		<!--<Param name="dl_analog_gain_2" type="short_array"/>-->
+		<!--<Param name="dl_analog_type_2" type="short"/>-->
+	</ParamUnit>
+</ParamUnitDesc>

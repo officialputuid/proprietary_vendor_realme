@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SpecialPwsChannel version="1">
+<SpecialPwsChannel mcc="466" channels="911,919"/>
+<SpecialPwsChannel mcc="730" channels="919,921"/>
+</SpecialPwsChannel>

@@ -1,0 +1,60 @@
+#
+# MAL related services (Begin)
+#
+
+on property:vendor.volte_md_status=ready
+    restart volte_imsm_93
+    restart vendor.volte_stack
+    restart vendor.volte_ua
+    restart vendor.volte_imcb
+
+on property:vendor.volte_md_status=reset
+    rm /dev/radio/pttyims
+    rm /dev/radio/ptty2ims
+    rm /dev/radio/ptty3ims
+    rm /dev/radio/ptty4ims
+    stop vendor.volte_imcb
+    stop vendor.volte_ua
+    stop vendor.volte_stack
+    stop volte_imsm_93
+
+on property:vendor.volte_md_status=stop
+    rm /dev/radio/pttyims
+    rm /dev/radio/ptty2ims
+    rm /dev/radio/ptty3ims
+    rm /dev/radio/ptty4ims
+    stop vendor.volte_imcb
+    stop vendor.volte_ua
+    stop vendor.volte_stack
+    stop volte_imsm_93
+
+on property:vendor.volte_md_status=flightmode
+    rm /dev/radio/pttyims
+    rm /dev/radio/ptty2ims
+    rm /dev/radio/ptty3ims
+    rm /dev/radio/ptty4ims
+    stop vendor.volte_imcb
+    stop vendor.volte_ua
+    stop vendor.volte_stack
+    stop volte_imsm_93
+
+on property:vendor.volte_md_status=exception
+    rm /dev/radio/pttyims
+    rm /dev/radio/ptty2ims
+    rm /dev/radio/ptty3ims
+    rm /dev/radio/ptty4ims
+    stop vendor.volte_imcb
+    stop vendor.volte_ua
+    stop vendor.volte_stack
+    stop volte_imsm_93
+
+service volte_imsm_93 /vendor/bin/volte_imsm_93
+    class core
+    user root
+    group radio cache inet misc log system wifi
+    oneshot
+    disabled
+
+#
+# MAL related services (End)
+#

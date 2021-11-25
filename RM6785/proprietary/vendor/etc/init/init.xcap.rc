@@ -1,0 +1,29 @@
+#
+## XCAP related services (Begin)
+#
+on property:vendor.mtk.md1.status=ready
+    start vendor.xcap
+
+on property:vendor.mtk.md1.status=reset
+    stop vendor.xcap
+
+on property:vendor.mtk.md1.status=stop
+    stop vendor.xcap
+
+on property:vendor.mtk.md1.status=flightmode
+    stop vendor.xcap
+
+on property:vendor.mtk.md1.status=exception
+    stop vendor.xcap
+    
+service vendor.xcap /vendor/bin/xcap
+    class core
+    socket vendor.xcap stream 660 root system
+    user root
+    group system log inet radio net_admin root
+    oneshot
+    disabled
+
+#
+## XCAP related services (End)
+#

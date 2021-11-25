@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file.
+       cur_supl_profile is supported but other supl_profile are ignored.
+       auto_profile_enable is not supported.
+  -->
+
+  <cur_supl_profile name="KDDI"
+      addr="location2.kddi.ne.jp"
+      port="7275"
+      tls="true"
+  />
+
+  <cdma_profile name="CDMA1"
+  />
+
+  <agps_setting
+    ignore_si_for_e911="true"
+  />
+
+  <gnss_setting
+    a_glonass_satellite_enable="false"
+    a_beidou_satellite_enable="false"
+    a_galileo_satellite_enable="false"
+  />
+
+  <cp_setting
+  />
+
+  <up_setting
+    ca_enable="true"
+    msa_enable="true"
+    qop_delay="5"
+    force_otdoa_assist_req="true"
+    aosp_pos_mode_enable="true"
+  />
+
+</mtk_agps_profiles>

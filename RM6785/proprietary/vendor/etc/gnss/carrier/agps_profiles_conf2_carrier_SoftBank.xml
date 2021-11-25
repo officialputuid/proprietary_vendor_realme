@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mtk_agps_profiles maj_ver="1" min_ver="2">
+  <!-- Refer to agps_profiles_conf2.xml for values not provided in this file.
+       cur_supl_profile is supported but other supl_profile are ignored.
+       auto_profile_enable is not supported.
+  -->
+
+  <!-- For SI, OK to use Google SUPL Server on Internet.
+       For NI, SoftBank SUPL server will specify its SLP address in SUPL_INIT. -->
+  <cur_supl_profile name="SoftBank"
+      addr="supl.google.com"
+      port="7275"
+      tls="true"
+  />
+
+  <cdma_profile name="CDMA1"
+  />
+
+  <agps_setting
+    ignore_si_for_e911="true"
+  />
+
+  <gnss_setting
+    a_glonass_satellite_enable="false"
+    a_beidou_satellite_enable="false"
+    a_galileo_satellite_enable="false"
+  />
+
+  <cp_setting
+    cp_lppe_enable="false"
+  />
+
+  <up_setting
+    ca_enable="true"
+    dedicated_apn_enable="false"
+    preferred_2g3g_cell_age="0"
+    lpp_enable="false"
+    allow_ni_for_gps_off="true"
+    up_lppe_enable="false"
+    esupl_apn_mode="3"
+    ip_version_prefer="1"
+  />
+
+</mtk_agps_profiles>
